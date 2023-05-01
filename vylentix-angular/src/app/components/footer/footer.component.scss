@@ -1,0 +1,30 @@
+.footer {
+  background: linear-gradient(#ffffff, #d7d7d7);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 15rem;
+
+  a {
+    text-decoration: none;
+    color: #1a555e;
+  }
+
+  .quick-links {
+
+    a {
+      border: 2px solid #1a555e;
+      margin: 2rem 1rem;
+
+      &:hover {
+        background-color: #226e7a;
+        color: #fff;
+        border: 2px solid #226e7a;
+        transform: scale(1.1);
+        transition: all ease-in-out 0.3s;
+      }
+    }
+
+  }
+}
