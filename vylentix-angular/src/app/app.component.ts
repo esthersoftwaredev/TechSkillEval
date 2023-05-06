@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ThemeService } from './services/theme.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'vylentix-angular';
+  constructor(private themeService: ThemeService) {}
+
+  ngOnInit(): void {
+    this.themeService.theme$.subscribe((theme) => {
+      document.body.classList.remove('light-theme', 'dark-theme');
+      document.body.classList.add(theme);
+    });
+  }
 }
