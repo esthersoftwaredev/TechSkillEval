@@ -10,6 +10,8 @@ export class AppComponent {
   constructor(private themeService: ThemeService) {}
 
   ngOnInit(): void {
+    this.themeService.setTheme('dark-theme');
+
     this.themeService.theme$.subscribe((theme) => {
       document.body.classList.remove('light-theme', 'dark-theme');
       document.body.classList.add(theme);
