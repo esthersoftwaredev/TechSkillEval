@@ -1,31 +1,29 @@
 .footer {
-  background: linear-gradient(#ffffff, #d7d7d7);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 15rem;
+	// background: linear-gradient(#ffffff, #d7d7d7);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 15rem;
 
-  a {
-    text-decoration: none;
-  }
+	a {
+		text-decoration: none;
+	}
 
-  .quick-links {
+	.quick-links {
+		a {
+			font-size: 1rem;
+			font-family: "Ubuntu", sans-serif;
+			text-transform: uppercase;
+			margin: 0 1rem 1rem;
+			border: 0.11rem solid #ac74d0;
+			box-sizing: border-box;
 
-    a {
-      font-size: 1rem;
-      font-family: 'Ubuntu', sans-serif;
-      text-transform: uppercase;
-      margin: 0 1rem 1rem;;
-      border: 0.15rem solid #ac74d0;
-      box-sizing: border-box;
-
-      &:hover {
-        background: linear-gradient(#76b8ef 10%, #ac74d0 70%, #f022ac 100%);
-        transform: scale(1.1);
-        transition: all ease-in-out 0.3s;
-      }
-    }
-
-  }
+			&:hover {
+				background: linear-gradient(#76b8ef 10%, #ac74d0 70%, #f022ac 100%);
+				transform: scale(1.1);
+				transition: all ease-in-out 0.3s;
+			}
+		}
+	}
 }
