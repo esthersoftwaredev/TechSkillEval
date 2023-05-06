@@ -12,6 +12,7 @@
     <a mat-button routerLink="/contact" routerLinkActive="active">Join</a>
   </nav>
   <div class="theme-switcher">
-    <button (click)="toggleTheme()">switch</button>
+    <mat-slide-toggle (click)="toggleTheme()" checked></mat-slide-toggle>
+    <mat-icon>{{ isDarkTheme ? 'bedtime' : 'wb_sunny' }}</mat-icon>
   </div>
 </mat-toolbar>

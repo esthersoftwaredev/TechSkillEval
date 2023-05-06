@@ -9,8 +9,8 @@ import { FooterComponent } from './components/footer/footer.component';
 
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatButtonModule} from '@angular/material/button';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatIconModule} from '@angular/material/icon';
-
 
 @NgModule({
   declarations: [
@@ -23,6 +23,7 @@ import {MatIconModule} from '@angular/material/icon';
     BrowserAnimationsModule,
     MatToolbarModule,
     MatButtonModule,
+    MatSlideToggleModule,
     MatIconModule
   ],
   providers: [],
