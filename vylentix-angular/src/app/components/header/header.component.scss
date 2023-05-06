@@ -27,6 +27,8 @@ mat-toolbar {
 
       &:hover {
         background: linear-gradient(#76b8ef 10%, #ac74d0 70%, #f022ac 100%);
+        transform: scale(1.1);
+        transition: all ease-in-out 0.3s;
       }
     }
   }

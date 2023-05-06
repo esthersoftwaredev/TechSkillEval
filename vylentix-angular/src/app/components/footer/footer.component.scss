@@ -8,19 +8,20 @@
 
   a {
     text-decoration: none;
-    color: #1a555e;
   }
 
   .quick-links {
 
     a {
-      border: 2px solid #1a555e;
-      margin: 2rem 1rem;
+      font-size: 1rem;
+      font-family: 'Ubuntu', sans-serif;
+      text-transform: uppercase;
+      margin: 0 1rem 1rem;;
+      border: 0.15rem solid #ac74d0;
+      box-sizing: border-box;
 
       &:hover {
-        background-color: #226e7a;
-        color: #fff;
-        border: 2px solid #226e7a;
+        background: linear-gradient(#76b8ef 10%, #ac74d0 70%, #f022ac 100%);
         transform: scale(1.1);
         transition: all ease-in-out 0.3s;
       }
