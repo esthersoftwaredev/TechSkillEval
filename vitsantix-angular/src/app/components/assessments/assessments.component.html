@@ -57,12 +57,12 @@
 			<mat-icon>chevron_left</mat-icon>
 		</button>
 		<div #cardsWrapper class="cards-wrapper">
-			<mat-card *ngFor="let frontendSkill of frontendSkills; let i = index">
+			<mat-card *ngFor="let backendSkill of backendSkills; let i = index">
 				<mat-icon
-					[svgIcon]="frontendSkill.icon"
-					[ngStyle]="{ 'background-color': frontendSkill.bgrColor }"
+					[svgIcon]="backendSkill.icon"
+					[ngStyle]="{ 'background-color': backendSkill.bgrColor }"
 				></mat-icon>
-				<h3>{{ frontendSkill.title }}</h3>
+				<h3>{{ backendSkill.title }}</h3>
 				<div class="actions">
 					<p>Schedule:</p>
 					<button

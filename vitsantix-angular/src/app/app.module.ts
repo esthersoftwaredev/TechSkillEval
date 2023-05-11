@@ -97,5 +97,21 @@ export class AppModule {
 			"vue",
 			this.domSanitizer.bypassSecurityTrustResourceUrl("assets/icons/vue.svg")
 		);
+		this.matIconRegistry.addSvgIcon(
+			"node",
+			this.domSanitizer.bypassSecurityTrustResourceUrl("assets/icons/node.svg")
+		);
+		this.matIconRegistry.addSvgIcon(
+			"python",
+			this.domSanitizer.bypassSecurityTrustResourceUrl("assets/icons/python.svg")
+		);
+		this.matIconRegistry.addSvgIcon(
+			"django",
+			this.domSanitizer.bypassSecurityTrustResourceUrl("assets/icons/django.svg")
+		);
+		this.matIconRegistry.addSvgIcon(
+			"java",
+			this.domSanitizer.bypassSecurityTrustResourceUrl("assets/icons/java.svg")
+		);
 	}
 }

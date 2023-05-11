@@ -23,6 +23,12 @@ export class AssessmentsComponent {
 		{ icon: "vue", bgrColor: "#41b883", title: "Vue" },
 	];
 
+	backendSkills: Assessment[] = [
+		{ icon: "node", bgrColor: "#3b7f3a", title: "nodeJS" },
+		{ icon: "python", bgrColor: "#356895", title: "Python" },
+		{ icon: "django", bgrColor: "#092e20", title: "Django" },
+	];
+
   @ViewChild('cardsWrapper', { read: ElementRef }) cardsWrapper!: ElementRef;
 
   scroll(direction: number): void {
