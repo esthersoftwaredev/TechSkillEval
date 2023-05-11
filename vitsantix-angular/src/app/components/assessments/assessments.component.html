@@ -6,10 +6,13 @@
 	</div>
 	<div class="cards-wrapper">
 		<mat-card *ngFor="let frontendSkill of frontendSkills">
-			<mat-icon>bedtime</mat-icon>
+			<mat-icon [svgIcon]="frontendSkill.icon" [ngStyle]="{'background-color': frontendSkill.bgrColor}"></mat-icon>
 			<h3>{{frontendSkill.title}}</h3>
-			<button mat-button>Verbal Video ITSA</button>
-			<button mat-button>Practical ITSA</button>
+      <div class="actions">
+        <p>Schedule:</p>
+        <button mat-button>Verbal Video ITSA</button>
+        <button mat-button>Practical ITSA</button>
+      </div>
 		</mat-card>
 	</div>
 

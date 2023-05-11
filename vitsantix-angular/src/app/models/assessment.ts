@@ -1,4 +1,5 @@
 export interface Assessment {
-  imageSrc: string;
+  icon: string;
+  bgrColor: string;
   title: string;
 }
