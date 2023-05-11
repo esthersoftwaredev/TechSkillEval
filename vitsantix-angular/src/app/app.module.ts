@@ -62,5 +62,9 @@ export class AppModule {
 			"css3",
 			this.domSanitizer.bypassSecurityTrustResourceUrl("assets/icons/css3.svg")
 		);
+		this.matIconRegistry.addSvgIcon(
+			"bootstrap",
+			this.domSanitizer.bypassSecurityTrustResourceUrl("assets/icons/bootstrap.svg")
+		);
 	}
 }

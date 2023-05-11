@@ -10,9 +10,9 @@ export class AssessmentsComponent {
   hoverFlags: { [key: string]: { [key: string]: boolean } } = {};
 
 	frontendSkills: Assessment[] = [
-		{ icon: "html5", bgrColor: "#349edc", title: "HTML" },
-		{ icon: "css3", bgrColor: "#f06529", title: "CSS" },
-		{ icon: "", bgrColor: "#f06529", title: "Bootstrap" },
+		{ icon: "html5", bgrColor: "#f38942", title: "HTML" },
+		{ icon: "css3", bgrColor: "#349edc", title: "CSS" },
+		{ icon: "bootstrap", bgrColor: "#513a75", title: "Bootstrap" },
 		{ icon: "", bgrColor: "#f06529", title: "Tailwind CSS" },
 		{ icon: "", bgrColor: "#f06529", title: "SCSS" },
 		{ icon: "", bgrColor: "#f06529", title: "JavaScript" },
