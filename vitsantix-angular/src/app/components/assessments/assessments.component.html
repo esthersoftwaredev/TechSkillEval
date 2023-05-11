@@ -1,32 +1,100 @@
 <div class="assessments">
-	<h3>Choose an Assessment</h3>
+	<h3>Choose an Assessment:</h3>
 
 	<div class="heading">
-		<h2>Frontend Web Development</h2>
+		<h2>Frontend Development</h2>
+	</div>
+	<div class="carousel-container">
+		<button mat-icon-button class="arrow left" (click)="scroll(-1)">
+			<mat-icon>chevron_left</mat-icon>
+		</button>
+		<div #cardsWrapper class="cards-wrapper">
+			<mat-card *ngFor="let frontendSkill of frontendSkills; let i = index">
+				<mat-icon
+					[svgIcon]="frontendSkill.icon"
+					[ngStyle]="{ 'background-color': frontendSkill.bgrColor }"
+				></mat-icon>
+				<h3>{{ frontendSkill.title }}</h3>
+				<div class="actions">
+					<p>Schedule:</p>
+					<button
+						mat-button
+						(mouseenter)="onButtonMouseEnter(i, 'verbal')"
+						(mouseleave)="onButtonMouseLeave(i, 'verbal')"
+					>
+						<span class="button-text" *ngIf="!hoverFlags[i]?.['verbal']"
+							>Video ITSA</span
+						>
+						<span class="hover-text" *ngIf="hoverFlags[i]?.['verbal']"
+							>Select</span
+						>
+					</button>
+					<button
+						mat-button
+						(mouseenter)="onButtonMouseEnter(i, 'practical')"
+						(mouseleave)="onButtonMouseLeave(i, 'practical')"
+					>
+						<span class="button-text" *ngIf="!hoverFlags[i]?.['practical']"
+							>Interview PREP</span
+						>
+						<span class="hover-text" *ngIf="hoverFlags[i]?.['practical']"
+							>Select</span
+						>
+					</button>
+				</div>
+			</mat-card>
+		</div>
+		<button mat-icon-button class="arrow right" (click)="scroll(1)">
+			<mat-icon>chevron_right</mat-icon>
+		</button>
 	</div>
 
-  <div class="carousel-container">
-    <button mat-icon-button class="arrow left" (click)="scroll(-1)"><mat-icon>chevron_left</mat-icon></button>
-
-	<div #cardsWrapper class="cards-wrapper">
-		<mat-card *ngFor="let frontendSkill of frontendSkills; let i = index">
-			<mat-icon [svgIcon]="frontendSkill.icon" [ngStyle]="{'background-color': frontendSkill.bgrColor}"></mat-icon>
-			<h3>{{frontendSkill.title}}</h3>
-      <div class="actions">
-        <p>Schedule:</p>
-        <button mat-button (mouseenter)="onButtonMouseEnter(i, 'verbal')" (mouseleave)="onButtonMouseLeave(i, 'verbal')">
-          <span class="button-text" *ngIf="!hoverFlags[i]?.['verbal']">Video ITSA</span>
-          <span class="hover-text" *ngIf="hoverFlags[i]?.['verbal']">Select</span>
-        </button>
-        <button mat-button (mouseenter)="onButtonMouseEnter(i, 'practical')" (mouseleave)="onButtonMouseLeave(i, 'practical')">
-          <span class="button-text" *ngIf="!hoverFlags[i]?.['practical']">Interview PREP</span>
-          <span class="hover-text" *ngIf="hoverFlags[i]?.['practical']">Select</span>
-        </button>
-      </div>
-		</mat-card>
+	<div class="heading">
+		<h2>Backend Development</h2>
 	</div>
-
-  <button mat-icon-button class="arrow right" (click)="scroll(1)"><mat-icon>chevron_right</mat-icon></button>
-</div>
+	<div class="carousel-container">
+		<button mat-icon-button class="arrow left" (click)="scroll(-1)">
+			<mat-icon>chevron_left</mat-icon>
+		</button>
+		<div #cardsWrapper class="cards-wrapper">
+			<mat-card *ngFor="let frontendSkill of frontendSkills; let i = index">
+				<mat-icon
+					[svgIcon]="frontendSkill.icon"
+					[ngStyle]="{ 'background-color': frontendSkill.bgrColor }"
+				></mat-icon>
+				<h3>{{ frontendSkill.title }}</h3>
+				<div class="actions">
+					<p>Schedule:</p>
+					<button
+						mat-button
+						(mouseenter)="onButtonMouseEnter(i, 'verbal')"
+						(mouseleave)="onButtonMouseLeave(i, 'verbal')"
+					>
+						<span class="button-text" *ngIf="!hoverFlags[i]?.['verbal']"
+							>Video ITSA</span
+						>
+						<span class="hover-text" *ngIf="hoverFlags[i]?.['verbal']"
+							>Select</span
+						>
+					</button>
+					<button
+						mat-button
+						(mouseenter)="onButtonMouseEnter(i, 'practical')"
+						(mouseleave)="onButtonMouseLeave(i, 'practical')"
+					>
+						<span class="button-text" *ngIf="!hoverFlags[i]?.['practical']"
+							>Interview PREP</span
+						>
+						<span class="hover-text" *ngIf="hoverFlags[i]?.['practical']"
+							>Select</span
+						>
+					</button>
+				</div>
+			</mat-card>
+		</div>
+		<button mat-icon-button class="arrow right" (click)="scroll(1)">
+			<mat-icon>chevron_right</mat-icon>
+		</button>
+	</div>
 
 </div>

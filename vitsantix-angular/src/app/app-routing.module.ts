@@ -5,9 +5,11 @@ import { AboutComponent } from './components/about/about.component';
 import { AssessmentsComponent } from './components/assessments/assessments.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
+  { path: '', redirectTo: 'home', pathMatch: 'full'},
+  { path: 'home', component: HomeComponent },
   { path: 'assessments', component: AssessmentsComponent },
   { path: 'about', component: AboutComponent },
+  { path: '**', redirectTo: 'home', pathMatch: 'full'},
 ];
 
 @NgModule({
