@@ -1,0 +1,46 @@
+.assessments {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 65vh;
+  width: 90vw;
+  margin: 2rem auto;
+
+
+  .heading {
+    width: 80%;
+    position: relative;
+
+    &::before {
+      content: '';
+      background: url("./../../../assets/images/pexels-anni-roenkae-3109807.jpg")
+			center center / cover no-repeat;
+		  opacity: 0.3;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 0.5rem;;
+    }
+
+    h2 {
+      text-align: center;
+      text-transform: uppercase;
+      margin-top: 1rem;
+    }
+
+  }
+
+  .cards-wrapper {
+    mat-card {
+      display: flex;
+      align-items: center;
+      width: 20vw;
+      margin: 1rem;
+
+      button {
+        margin: 1rem;
+      }
+    }
+  }
+}

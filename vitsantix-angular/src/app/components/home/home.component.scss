@@ -26,22 +26,24 @@
 	border-radius: 1rem;
 	box-shadow: 0 0 5px 3px #0000002a;
 
-	.heading,
-	.more-info {
-		text-align: center;
-		width: 80%;
-		margin: auto;
-
-		h2 {
+  .heading {
+    h2 {
 			text-transform: uppercase;
 			font-size: 2rem;
-			font-weight: 600;
+			font-weight: 400;
 			margin-bottom: 1rem;
 
       span {
 				color: #a268c1;
 			}
 		}
+  }
+
+	.heading,
+	.more-info {
+		text-align: center;
+		width: 80%;
+		margin: auto;
 
 		h3 {
 			font-size: 1.5rem;
@@ -102,7 +104,7 @@
 			button {
 				margin: 1rem 0;
 				padding: 1rem 1.3rem;
-				border: 0.11rem solid #ac74d0;
+				border: 0.11rem solid #a36fc3;
 
 				&:hover {
 					background: linear-gradient(#76b8ef 10%, #ac74d0 70%, #f022ac 100%);
