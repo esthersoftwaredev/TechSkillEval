@@ -54,6 +54,14 @@
 		p,
 		a {
 			font-size: 0.9rem;
+      color: #ac74d0;
+      text-decoration: none;
 		}
+
+    a {
+      &:hover {
+        color: #ca97e9;
+      }
+    }
 	}
 }
