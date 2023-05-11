@@ -13,7 +13,9 @@ import { HomeComponent } from "./components/home/home.component";
 import { AssessmentsComponent } from "./components/assessments/assessments.component";
 import { AboutComponent } from "./components/about/about.component";
 
+
 import { MatToolbarModule } from "@angular/material/toolbar";
+import { MatExpansionModule } from '@angular/material/expansion';
 import { MatSlideToggleModule } from "@angular/material/slide-toggle";
 import { MatCardModule } from "@angular/material/card";
 import { MatButtonModule } from "@angular/material/button";
@@ -34,6 +36,7 @@ import { MatTooltipModule } from "@angular/material/tooltip";
 		BrowserAnimationsModule,
     HttpClientModule,
 		MatToolbarModule,
+    MatExpansionModule,
 		MatSlideToggleModule,
 		MatCardModule,
 		MatButtonModule,

@@ -1,1 +1,48 @@
-<p>about works!</p>
+<div class="about">
+
+  <div class="heading">
+		<h2>About Vitsantix</h2>
+	</div>
+	<mat-card>
+    <mat-card-header>
+      <p> Our platform is designed to revolutionize the way technical skills are evaluated and validated, providing a more accurate and reliable measure of a developer's abilities.</p>
+      <p>The name "VITSANTIX" is a combination of the words "Video," representing our video-based assessment approach, and "ITSA," an abbreviation for Independent Technical Skills Assessment. Together, they represent our commitment to delivering a comprehensive and unbiased evaluation of technical skills through video assessments.</p>
+      <p>At VITSANTIX, we believe that the traditional methods of assessing technical skills are outdated and often fail to capture the true abilities of developers. Our video-based assessments provide a more dynamic and interactive way to evaluate a developer's skills, allowing them to showcase their expertise in real-time and in a comfortable environment.</p>
+      <p>Our mission is to bridge the gap between developers and employers by offering an unbiased and reliable platform for technical skills assessment. We strive to create a more equal playing field in the web development industry, where all developers have an equal opportunity to prove their abilities, regardless of their educational background or years of experience.</p>
+      <p>Join us at VITSANTIX and experience the future of technical skills assessment today!</p>
+    </mat-card-header>
+  </mat-card>
+
+	<div class="heading">
+		<h2>Our Goal</h2>
+	</div>
+	<mat-card>
+		<mat-card-header>
+			<h3>To promote greater equality<br> within the Web Development field.</h3>
+			<p>
+				We believe that every web developer, regardless of their educational
+				background or years of experience, should have the opportunity to
+				showcase their skills and abilities.
+			</p>
+			<p>
+				Whether you have a full Computer Science degree, completed a bootcamp,
+				or are a self-taught developer, we welcome you to prove your expertise.
+			</p>
+
+			<h4>How We Plan to Achieve Our Goal:</h4>
+		</mat-card-header>
+		<mat-accordion>
+			<mat-expansion-panel *ngFor="let goal of goalsPanel">
+				<mat-expansion-panel-header>
+					<mat-panel-title>
+						{{ goal.title }}
+					</mat-panel-title>
+				</mat-expansion-panel-header>
+				<p>{{ goal.content }}</p>
+			</mat-expansion-panel>
+		</mat-accordion>
+	</mat-card>
+
+
+
+</div>
