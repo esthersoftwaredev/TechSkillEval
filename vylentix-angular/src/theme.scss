@@ -30,11 +30,19 @@ $dark-theme: mat.define-dark-theme((
 
 .light-theme {
   @include mat.all-component-themes($light-theme);
+
+  .home-content {
+    background-color: #e2e2e292;
+  }
 }
 
 .dark-theme {
   @include mat.all-component-colors($dark-theme);
 
-  background-color: #333;
-  color: #bbbbbb;
+  background-color: #222;
+  color: #cfcfcf;
+
+  .home-content {
+    background-color: #333333ab;
+  }
 }

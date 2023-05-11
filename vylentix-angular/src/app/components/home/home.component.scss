@@ -1,14 +1,12 @@
-::host ::ng-deep .mat-tooltip {
-  text-align: center;
-}
-
-.content {
-	min-height: 32.7vw;
+.home-content {
+  width: 60vw;
+  margin: 2rem auto;
+  padding: 3rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 5px 3px #0000002a;
 
 	.heading {
-		width: 50vw;
 		text-align: center;
-		margin: 3rem auto;
 
 		h2 {
 			text-transform: uppercase;
