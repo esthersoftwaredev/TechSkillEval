@@ -4,7 +4,11 @@
 	<div class="heading">
 		<h2>Frontend Web Development</h2>
 	</div>
-	<div class="cards-wrapper">
+
+  <div class="carousel-container">
+    <button mat-icon-button class="arrow left" (click)="scroll(-1)"><mat-icon>chevron_left</mat-icon></button>
+
+	<div #cardsWrapper class="cards-wrapper">
 		<mat-card *ngFor="let frontendSkill of frontendSkills; let i = index">
 			<mat-icon [svgIcon]="frontendSkill.icon" [ngStyle]="{'background-color': frontendSkill.bgrColor}"></mat-icon>
 			<h3>{{frontendSkill.title}}</h3>
@@ -18,9 +22,11 @@
           <span class="button-text" *ngIf="!hoverFlags[i]?.['practical']">Practical ITSA</span>
           <span class="hover-text" *ngIf="hoverFlags[i]?.['practical']">Select</span>
         </button>
-
       </div>
 		</mat-card>
 	</div>
+
+  <button mat-icon-button class="arrow right" (click)="scroll(1)"><mat-icon>chevron_right</mat-icon></button>
+</div>
 
 </div>

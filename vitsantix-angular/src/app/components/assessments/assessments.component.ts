@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, ElementRef, ViewChild } from "@angular/core";
 import { Assessment } from "src/app/models/assessment";
 
 @Component({
@@ -22,6 +22,18 @@ export class AssessmentsComponent {
 		{ icon: "", bgrColor: "#f06529", title: "React" },
 		{ icon: "", bgrColor: "#f06529", title: "Vue" },
 	];
+
+  @ViewChild('cardsWrapper', { read: ElementRef }) cardsWrapper!: ElementRef;
+
+  scroll(direction: number): void {
+    const cardsWrapperElement = this.cardsWrapper.nativeElement as HTMLElement;
+    const cardWidth = cardsWrapperElement.children[0].clientWidth;
+
+    cardsWrapperElement.scrollBy({
+      left: cardWidth * direction,
+      behavior: 'smooth',
+    });
+  }
 
   onButtonMouseEnter(cardIndex: number, buttonType: string) {
     if (!this.hoverFlags[cardIndex]) {
