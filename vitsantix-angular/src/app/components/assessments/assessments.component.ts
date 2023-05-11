@@ -13,14 +13,14 @@ export class AssessmentsComponent {
 		{ icon: "html5", bgrColor: "#f38942", title: "HTML" },
 		{ icon: "css3", bgrColor: "#349edc", title: "CSS" },
 		{ icon: "bootstrap", bgrColor: "#513a75", title: "Bootstrap" },
-		{ icon: "", bgrColor: "#f06529", title: "Tailwind CSS" },
-		{ icon: "", bgrColor: "#f06529", title: "SCSS" },
-		{ icon: "", bgrColor: "#f06529", title: "JavaScript" },
-		{ icon: "", bgrColor: "#f06529", title: "jQuery" },
-		{ icon: "", bgrColor: "#f06529", title: "TypeScript" },
-		{ icon: "", bgrColor: "#f06529", title: "Angular" },
-		{ icon: "", bgrColor: "#f06529", title: "React" },
-		{ icon: "", bgrColor: "#f06529", title: "Vue" },
+		{ icon: "", bgrColor: "#19b3ba", title: "Tailwind CSS" },
+		{ icon: "sass", bgrColor: "#cf649a", title: "SCSS" },
+		{ icon: "javascript", bgrColor: "#f0c022", title: "JavaScript" },
+		{ icon: "jquery", bgrColor: "#193556", title: "jQuery" },
+		{ icon: "typescript", bgrColor: "#2f74c0", title: "TypeScript" },
+		{ icon: "angular", bgrColor: "#de0031", title: "Angular" },
+		{ icon: "react", bgrColor: "#4cbad8", title: "React" },
+		{ icon: "vue", bgrColor: "#41b883", title: "Vue" },
 	];
 
   @ViewChild('cardsWrapper', { read: ElementRef }) cardsWrapper!: ElementRef;

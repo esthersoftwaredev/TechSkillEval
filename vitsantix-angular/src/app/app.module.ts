@@ -66,5 +66,33 @@ export class AppModule {
 			"bootstrap",
 			this.domSanitizer.bypassSecurityTrustResourceUrl("assets/icons/bootstrap.svg")
 		);
+		this.matIconRegistry.addSvgIcon(
+			"sass",
+			this.domSanitizer.bypassSecurityTrustResourceUrl("assets/icons/sass.svg")
+		);
+		this.matIconRegistry.addSvgIcon(
+			"javascript",
+			this.domSanitizer.bypassSecurityTrustResourceUrl("assets/icons/javascript.svg")
+		);
+		this.matIconRegistry.addSvgIcon(
+			"jquery",
+			this.domSanitizer.bypassSecurityTrustResourceUrl("assets/icons/jquery.svg")
+		);
+		this.matIconRegistry.addSvgIcon(
+			"typescript",
+			this.domSanitizer.bypassSecurityTrustResourceUrl("assets/icons/typescript.svg")
+		);
+		this.matIconRegistry.addSvgIcon(
+			"angular",
+			this.domSanitizer.bypassSecurityTrustResourceUrl("assets/icons/angular.svg")
+		);
+		this.matIconRegistry.addSvgIcon(
+			"react",
+			this.domSanitizer.bypassSecurityTrustResourceUrl("assets/icons/react.svg")
+		);
+		this.matIconRegistry.addSvgIcon(
+			"vue",
+			this.domSanitizer.bypassSecurityTrustResourceUrl("assets/icons/vue.svg")
+		);
 	}
 }
