@@ -15,11 +15,11 @@
       <div class="actions">
         <p>Schedule:</p>
         <button mat-button (mouseenter)="onButtonMouseEnter(i, 'verbal')" (mouseleave)="onButtonMouseLeave(i, 'verbal')">
-          <span class="button-text" *ngIf="!hoverFlags[i]?.['verbal']">Verbal Video ITSA</span>
+          <span class="button-text" *ngIf="!hoverFlags[i]?.['verbal']">Video ITSA</span>
           <span class="hover-text" *ngIf="hoverFlags[i]?.['verbal']">Select</span>
         </button>
         <button mat-button (mouseenter)="onButtonMouseEnter(i, 'practical')" (mouseleave)="onButtonMouseLeave(i, 'practical')">
-          <span class="button-text" *ngIf="!hoverFlags[i]?.['practical']">Practical ITSA</span>
+          <span class="button-text" *ngIf="!hoverFlags[i]?.['practical']">Interview PREP</span>
           <span class="hover-text" *ngIf="hoverFlags[i]?.['practical']">Select</span>
         </button>
       </div>
