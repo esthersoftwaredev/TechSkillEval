@@ -32,6 +32,8 @@
   }
 
   .cards-wrapper {
+    display: flex;
+    flex-wrap: wrap;
     mat-card {
       display: flex;
       align-items: center;

@@ -5,9 +5,9 @@
 		<h2>Frontend Web Development</h2>
 	</div>
 	<div class="cards-wrapper">
-		<mat-card>
+		<mat-card *ngFor="let frontendSkill of frontendSkills">
 			<mat-icon>bedtime</mat-icon>
-			<h3>HTML</h3>
+			<h3>{{frontendSkill.title}}</h3>
 			<button mat-button>Verbal Video ITSA</button>
 			<button mat-button>Practical ITSA</button>
 		</mat-card>
