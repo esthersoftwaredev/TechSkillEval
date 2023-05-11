@@ -1,32 +1,46 @@
+::host ::ng-deep .mat-tooltip {
+  text-align: center;
+}
+
 .content {
-  min-height: 32.7vw;
+	min-height: 32.7vw;
 
-  .heading{
-    width: 50vw;
-    text-align: center;
-    margin: 3rem auto;
+	.heading {
+		width: 50vw;
+		text-align: center;
+		margin: 3rem auto;
 
-    h2 {
-      text-transform: uppercase;
-      font-size: 1.5rem;
-      font-weight: 600;
-      margin-bottom: 3rem;
-    }
+		h2 {
+			text-transform: uppercase;
+			font-size: 2rem;
+			font-weight: 600;
+			margin-bottom: 3rem;
+		}
 
-    .itsa {
-      text-decoration: underline;
-    }
-  }
+		h3 {
+			font-size: 1.5rem;
+			line-height: 2.5rem;
+			margin-bottom: 3rem;
+		}
 
-  .cards-wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
+		h4 {
 
-    mat-card {
-      margin: 1rem;
-      padding: 2rem;
-    }
-  }
+			.itsa {
+				text-decoration: underline;
+				font-weight: 500;
+			}
+		}
+	}
+
+	.cards-wrapper {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: center;
+
+		mat-card {
+			margin: 1rem;
+			padding: 2rem;
+		}
+	}
 }
