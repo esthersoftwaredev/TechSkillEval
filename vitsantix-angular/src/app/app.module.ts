@@ -72,6 +72,10 @@ export class AppModule {
 			this.domSanitizer.bypassSecurityTrustResourceUrl("assets/icons/bootstrap.svg")
 		);
 		this.matIconRegistry.addSvgIcon(
+			"tailwindcss",
+			this.domSanitizer.bypassSecurityTrustResourceUrl("assets/icons/tailwindcss.svg")
+		);
+		this.matIconRegistry.addSvgIcon(
 			"sass",
 			this.domSanitizer.bypassSecurityTrustResourceUrl("assets/icons/sass.svg")
 		);
@@ -114,6 +118,18 @@ export class AppModule {
 		this.matIconRegistry.addSvgIcon(
 			"java",
 			this.domSanitizer.bypassSecurityTrustResourceUrl("assets/icons/java.svg")
+		);
+		this.matIconRegistry.addSvgIcon(
+			"go",
+			this.domSanitizer.bypassSecurityTrustResourceUrl("assets/icons/go.svg")
+		);
+		this.matIconRegistry.addSvgIcon(
+			"cplusplus",
+			this.domSanitizer.bypassSecurityTrustResourceUrl("assets/icons/cplusplus.svg")
+		);
+		this.matIconRegistry.addSvgIcon(
+			"dot-net",
+			this.domSanitizer.bypassSecurityTrustResourceUrl("assets/icons/dot-net.svg")
 		);
 	}
 }

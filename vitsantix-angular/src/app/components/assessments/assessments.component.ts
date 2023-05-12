@@ -13,7 +13,7 @@ export class AssessmentsComponent {
 		{ icon: "html5", bgrColor: "#f38942", title: "HTML" },
 		{ icon: "css3", bgrColor: "#349edc", title: "CSS" },
 		{ icon: "bootstrap", bgrColor: "#513a75", title: "Bootstrap" },
-		{ icon: "", bgrColor: "#19b3ba", title: "Tailwind CSS" },
+		{ icon: "tailwindcss", bgrColor: "#19b3ba", title: "Tailwind CSS" },
 		{ icon: "sass", bgrColor: "#cf649a", title: "SCSS" },
 		{ icon: "javascript", bgrColor: "#f0c022", title: "JavaScript" },
 		{ icon: "jquery", bgrColor: "#193556", title: "jQuery" },
@@ -26,12 +26,13 @@ export class AssessmentsComponent {
 	backendSkills: Assessment[] = [
 		{ icon: "node", bgrColor: "#3b7f3a", title: "nodeJS" },
 		{ icon: "python", bgrColor: "#356895", title: "Python" },
-		{ icon: "django", bgrColor: "#092e20", title: "Django" },
-		{ icon: "django", bgrColor: "#092e20", title: "Django" },
-		{ icon: "django", bgrColor: "#092e20", title: "Django" },
-		{ icon: "django", bgrColor: "#092e20", title: "Django" },
-		{ icon: "django", bgrColor: "#092e20", title: "Django" },
-		{ icon: "django", bgrColor: "#092e20", title: "Django" },
+		{ icon: "java", bgrColor: "#131f3f", title: "Java" },
+		{ icon: "go", bgrColor: "#092e20", title: "Go" },
+		{ icon: "", bgrColor: "#92458c", title: "C#" },
+		{ icon: "cplusplus", bgrColor: "#659bd3", title: "C++" },
+		{ icon: "dot-net", bgrColor: "#6d409d", title: ".NET" },
+		{ icon: "", bgrColor: "#4b568c", title: "PHP" },
+		{ icon: "ruby", bgrColor: "#092e20", title: "Ruby" },
 		{ icon: "django", bgrColor: "#092e20", title: "Django" },
 	];
 
