@@ -10,12 +10,47 @@
 		</button>
 		<div #cardsWrapper class="cards-wrapper">
 			<mat-card *ngFor="let frontendSkill of frontendSkills; let i = index">
-				<mat-icon
-					[svgIcon]="frontendSkill.icon"
-					[ngStyle]="{ 'background-color': frontendSkill.bgrColor }"
-				></mat-icon>
-				<h3>{{ frontendSkill.title }}</h3>
-				<div class="actions">
+				<div class="card-header">
+					<div class="card-title">
+						<mat-icon
+							[svgIcon]="frontendSkill.icon"
+							[ngStyle]="{ 'background-color': frontendSkill.bgrColor }"
+						></mat-icon>
+						<h3>{{ frontendSkill.title }}</h3>
+						<mat-radio-button
+							*ngIf="frontendSkill.secondIcon"
+							[value]="frontendSkill.title"
+							[(ngModel)]="selectedValue"
+						></mat-radio-button>
+					</div>
+					<div *ngIf="frontendSkill.secondIcon" class="card-title">
+						<mat-icon
+							[svgIcon]="frontendSkill.secondIcon"
+							[ngStyle]="{ 'background-color': frontendSkill.secondBgrColor }"
+						></mat-icon>
+						<h3>
+							{{ frontendSkill.secondTitle }}
+						</h3>
+						<mat-radio-button
+							[value]="frontendSkill.secondTitle"
+							[(ngModel)]="selectedValue"
+						></mat-radio-button>
+					</div>
+					<div *ngIf="frontendSkill.thirdIcon" class="card-title">
+						<mat-icon
+							[svgIcon]="frontendSkill.thirdIcon"
+							[ngStyle]="{ 'background-color': frontendSkill.thirdBgrColor }"
+						></mat-icon>
+						<h3>
+							{{ frontendSkill.thirdTitle }}
+						</h3>
+						<mat-radio-button
+							[value]="frontendSkill.thirdTitle"
+							[(ngModel)]="selectedValue"
+						></mat-radio-button>
+					</div>
+				</div>
+				<mat-card-actions>
 					<p>Schedule:</p>
 					<button
 						mat-button
@@ -41,7 +76,7 @@
 							>Select</span
 						>
 					</button>
-				</div>
+				</mat-card-actions>
 			</mat-card>
 		</div>
 		<button mat-icon-button class="arrow right" (click)="scroll(1, 0)">
@@ -53,17 +88,39 @@
 		<h2>Backend Development</h2>
 	</div>
 	<div class="carousel-container">
-		<button mat-icon-button class="arrow left" (click)="scroll(-1,1)">
+		<button mat-icon-button class="arrow left" (click)="scroll(-1, 1)">
 			<mat-icon>chevron_left</mat-icon>
 		</button>
 		<div #cardsWrapper class="cards-wrapper">
 			<mat-card *ngFor="let backendSkill of backendSkills; let i = index">
-				<mat-icon
-					[svgIcon]="backendSkill.icon"
-					[ngStyle]="{ 'background-color': backendSkill.bgrColor }"
-				></mat-icon>
-				<h3>{{ backendSkill.title }}</h3>
-				<div class="actions">
+				<div class="card-header">
+					<div class="card-title">
+						<mat-icon
+							[svgIcon]="backendSkill.icon"
+							[ngStyle]="{ 'background-color': backendSkill.bgrColor }"
+						></mat-icon>
+						<h3>{{ backendSkill.title }}</h3>
+						<mat-radio-button
+							*ngIf="backendSkill.secondIcon"
+							[value]="backendSkill.title"
+							[(ngModel)]="selectedValue"
+						></mat-radio-button>
+					</div>
+					<div *ngIf="backendSkill.secondIcon" class="card-title">
+						<mat-icon
+							[svgIcon]="backendSkill.secondIcon"
+							[ngStyle]="{ 'background-color': backendSkill.secondBgrColor }"
+						></mat-icon>
+						<h3>
+							{{ backendSkill.secondTitle }}
+						</h3>
+						<mat-radio-button
+							[value]="backendSkill.secondTitle"
+							[(ngModel)]="selectedValue"
+						></mat-radio-button>
+					</div>
+				</div>
+				<mat-card-actions>
 					<p>Schedule:</p>
 					<button
 						mat-button
@@ -89,12 +146,11 @@
 							>Select</span
 						>
 					</button>
-				</div>
+				</mat-card-actions>
 			</mat-card>
 		</div>
 		<button mat-icon-button class="arrow right" (click)="scroll(1, 1)">
 			<mat-icon>chevron_right</mat-icon>
 		</button>
 	</div>
-
 </div>

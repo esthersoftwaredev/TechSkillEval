@@ -3,6 +3,7 @@ import { BrowserModule } from "@angular/platform-browser";
 import { DomSanitizer } from "@angular/platform-browser";
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from "./app-routing.module";
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from "./app.component";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
@@ -22,6 +23,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatButtonModule } from "@angular/material/button";
 import { MatIconModule, MatIconRegistry } from "@angular/material/icon";
 import { MatTooltipModule } from "@angular/material/tooltip";
+import { MatRadioModule } from '@angular/material/radio';
 
 @NgModule({
 	declarations: [
@@ -36,6 +38,7 @@ import { MatTooltipModule } from "@angular/material/tooltip";
 		BrowserModule,
 		BrowserAnimationsModule,
     HttpClientModule,
+    FormsModule,
 		MatToolbarModule,
     MatExpansionModule,
 		MatSlideToggleModule,
@@ -43,7 +46,7 @@ import { MatTooltipModule } from "@angular/material/tooltip";
     MatListModule,
 		MatButtonModule,
 		MatIconModule,
-
+    MatRadioModule,
 		MatTooltipModule,
 		AppRoutingModule,
 	],
@@ -84,10 +87,6 @@ export class AppModule {
 			this.domSanitizer.bypassSecurityTrustResourceUrl("assets/icons/javascript.svg")
 		);
 		this.matIconRegistry.addSvgIcon(
-			"jquery",
-			this.domSanitizer.bypassSecurityTrustResourceUrl("assets/icons/jquery.svg")
-		);
-		this.matIconRegistry.addSvgIcon(
 			"typescript",
 			this.domSanitizer.bypassSecurityTrustResourceUrl("assets/icons/typescript.svg")
 		);
@@ -102,6 +101,14 @@ export class AppModule {
 		this.matIconRegistry.addSvgIcon(
 			"vue",
 			this.domSanitizer.bypassSecurityTrustResourceUrl("assets/icons/vue.svg")
+		);
+		this.matIconRegistry.addSvgIcon(
+			"svelte",
+			this.domSanitizer.bypassSecurityTrustResourceUrl("assets/icons/svelte.svg")
+		);
+    this.matIconRegistry.addSvgIcon(
+			"jquery",
+			this.domSanitizer.bypassSecurityTrustResourceUrl("assets/icons/jquery.svg")
 		);
 		this.matIconRegistry.addSvgIcon(
 			"node",
@@ -124,12 +131,24 @@ export class AppModule {
 			this.domSanitizer.bypassSecurityTrustResourceUrl("assets/icons/go.svg")
 		);
 		this.matIconRegistry.addSvgIcon(
+			"csharp",
+			this.domSanitizer.bypassSecurityTrustResourceUrl("assets/icons/csharp.svg")
+		);
+		this.matIconRegistry.addSvgIcon(
 			"cplusplus",
 			this.domSanitizer.bypassSecurityTrustResourceUrl("assets/icons/cplusplus.svg")
 		);
 		this.matIconRegistry.addSvgIcon(
 			"dot-net",
 			this.domSanitizer.bypassSecurityTrustResourceUrl("assets/icons/dot-net.svg")
+		);
+		this.matIconRegistry.addSvgIcon(
+			"ruby",
+			this.domSanitizer.bypassSecurityTrustResourceUrl("assets/icons/ruby.svg")
+		);
+		this.matIconRegistry.addSvgIcon(
+			"php",
+			this.domSanitizer.bypassSecurityTrustResourceUrl("assets/icons/php.svg")
 		);
 	}
 }

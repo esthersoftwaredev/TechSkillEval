@@ -20,7 +20,7 @@
 			width: 100%;
 			height: 100%;
 			border-radius: 0.5rem;
-      box-shadow: 0 0 7px 2px #0000008b;
+			box-shadow: 0 0 7px 2px #0000008b;
 		}
 
 		h2 {
@@ -35,7 +35,7 @@
 		align-items: center;
 		position: relative;
 		overflow: hidden;
-    width: 90%;
+		width: 90%;
 
 		.arrow {
 			position: absolute;
@@ -56,51 +56,73 @@
 			scroll-snap-type: x mandatory;
 			-webkit-overflow-scrolling: touch;
 			scroll-behavior: smooth;
-      min-height: 30vh;
-      width: 90%;
-      margin: auto;
+			min-height: 30vh;
+			width: 90%;
+			margin: auto;
 
 			mat-card {
 				flex: 0 0 auto;
-        align-items: center;
+				align-items: center;
+        justify-content: space-between;
 				scroll-snap-align: start;
-        width: 14rem;
+				width: 14rem;
 				margin: 1.5rem 0.7rem 1.5rem;
-        padding: 2rem;
+				padding: 1rem;
 
-        mat-icon {
-          height: 2rem;
-          width: 2rem;
-          fill: #e9fafc;
-          padding: 0.9rem;
-          border-radius: 50%;
-        }
-
-        h3 {
-          font-size: 1.2rem;
-          font-weight: 500;
-        }
-
-        .actions {
+				.card-header {
           display: flex;
-          flex-direction: column;
+          flex-direction: row;
+          flex-wrap: wrap;
 
-          p {
-            text-align: center;
-          }
+					.card-title {
+						display: flex;
+						flex-wrap: wrap;
+						flex-direction: column;
+						justify-content: center;
+						align-items: center;
 
-          button {
-            text-transform: uppercase;
-            font-size: 0.8rem;
-            width: 11rem;
-            margin: 0.5rem;
-            border: 0.11rem solid #ac74d0;
-
-            &:hover {
-              background: linear-gradient(#76b8ef 10%, #ac74d0 70%, #f022ac 100%);
+            mat-icon {
+              height: 1.5rem;
+              width: 1.5rem;
+              fill: #e9fafc;
+              padding: 0.5rem;
+              margin: 0.4rem;
+              border-radius: 50%;
             }
-          }
-        }
+					}
+				}
+
+				h3 {
+					display: inline;
+					font-size: 0.9rem;
+					font-weight: 400;
+          margin: 0 0.4rem;
+				}
+
+				mat-card-actions {
+					display: flex;
+					flex-direction: column;
+
+					p {
+						text-align: center;
+					}
+
+					button {
+						text-transform: uppercase;
+						font-size: 0.8rem;
+						width: 11rem;
+						margin: 0.5rem;
+						border: 0.11rem solid #ac74d0;
+
+						&:hover {
+							background: linear-gradient(
+								#76b8ef 10%,
+								#ac74d0 70%,
+								#f022ac 100%
+							);
+						}
+					}
+				}
 			}
 		}
 	}
