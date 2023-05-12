@@ -11,12 +11,11 @@
 		<div #cardsWrapper class="cards-wrapper">
 			<mat-card *ngFor="let frontendSkill of frontendSkills; let i = index">
 
-
           <div class="card-header">
             <ng-container *ngIf="frontendSkill.secondTitle || frontendSkill.thirdTitle || frontendSkill.forthTitle; else normalCardTitle">
               <form [formGroup]="form">
                 <mat-form-field appearance="fill">
-                  <mat-label>{{ frontendSkill.title }}</mat-label>
+                  <mat-label>{{ frontendSkill.title }} / {{ frontendSkill.secondTitle }} / {{ frontendSkill.thirdTitle }}</mat-label>
                   <mat-select formControlName="selectedValue">
                     <mat-option [value]="frontendSkill.title">
                       <mat-icon [svgIcon]="frontendSkill.icon" [ngStyle]="{ 'background-color': frontendSkill.bgrColor }"></mat-icon>

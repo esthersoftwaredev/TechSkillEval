@@ -9,10 +9,15 @@ import { Assessment } from "src/app/models/assessment";
 })
 export class AssessmentsComponent implements OnInit {
 	hoverFlags: { [key: string]: { [key: string]: boolean } } = {};
-	// selectedValue: string | null = null;
   form!: FormGroup;
 
   constructor(private formBuilder: FormBuilder) {}
+
+  ngOnInit(): void {
+    this.form = this.formBuilder.group({
+      selectedValue: null,
+    });
+  }
 
 	frontendSkills: Assessment[] = [
 		{ icon: "html5", bgrColor: "#f38942", title: "HTML" },
@@ -133,12 +138,6 @@ export class AssessmentsComponent implements OnInit {
 		{ icon: "php", bgrColor: "#4b568c", title: "PHP" },
 		{ icon: "ruby", bgrColor: "#eb5745", title: "Ruby" },
 	];
-
-  ngOnInit(): void {
-    this.form = this.formBuilder.group({
-      selectedValue: null,
-    });
-  }
 
 	@ViewChildren("cardsWrapper", { read: ElementRef })
 	cardsWrappers!: QueryList<ElementRef>;
