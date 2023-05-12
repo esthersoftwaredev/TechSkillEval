@@ -1,9 +1,21 @@
-:host ::ng-deep mat-option {
-  mat-icon {
-    height: 2rem;
-    width: 2rem;
+::ng-deep mat-form-field {
+
+  mat-label {
+    color: #ac74d0;
   }
 }
+
+.mat-mdc-option .mat-icon {
+  height: 1rem;
+  width: 1rem;
+  padding: 0.5rem;
+  border-radius: 50%;
+}
+
+.mat-primary .mat-mdc-option.mdc-list-item--selected:not(.mdc-list-item--disabled) .mdc-list-item__primary-text {
+  color: #ac74d0;
+}
+
 
 .assessments {
 	display: flex;

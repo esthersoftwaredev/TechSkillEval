@@ -4,7 +4,6 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { DomSanitizer } from "@angular/platform-browser";
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from "./app-routing.module";
-import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from "./app.component";
@@ -43,7 +42,6 @@ import { MatSelectModule } from '@angular/material/select';
 		BrowserAnimationsModule,
     HttpClientModule,
 		AppRoutingModule,
-    FormsModule,
     ReactiveFormsModule,
 		MatToolbarModule,
 		MatTooltipModule,
