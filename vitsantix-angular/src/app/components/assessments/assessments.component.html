@@ -11,40 +11,31 @@
 		<div #cardsWrapper class="cards-wrapper">
 			<mat-card *ngFor="let frontendSkill of frontendSkills; let i = index">
 
-          <div class="card-header">
-            <ng-container *ngIf="frontendSkill.secondTitle || frontendSkill.thirdTitle || frontendSkill.forthTitle; else normalCardTitle">
-              <form [formGroup]="form">
-                <mat-form-field appearance="fill">
-                  <mat-label>{{ frontendSkill.title }}</mat-label>
-                  <mat-label *ngIf="frontendSkill.secondTitle"> / {{frontendSkill.secondTitle}}</mat-label>
-                  <mat-select formControlName="selectedValue">
-                    <mat-option [value]="frontendSkill.title">
-                      <mat-icon [svgIcon]="frontendSkill.icon" [ngStyle]="{ 'background-color': frontendSkill.bgrColor }"></mat-icon>
-                      {{ frontendSkill.title }}
-                    </mat-option>
-                    <mat-option *ngIf="frontendSkill.secondTitle" [value]="frontendSkill.secondTitle">
-                      <mat-icon [svgIcon]="frontendSkill.secondIcon || ''" [ngStyle]="{ 'background-color': frontendSkill.secondBgrColor }"></mat-icon>
-                      {{ frontendSkill.secondTitle }}
-                    </mat-option>
-                    <mat-option *ngIf="frontendSkill.thirdTitle" [value]="frontendSkill.thirdTitle">
-                      <mat-icon [svgIcon]="frontendSkill.thirdIcon || ''" [ngStyle]="{ 'background-color': frontendSkill.thirdBgrColor }"></mat-icon>
-                      {{ frontendSkill.thirdTitle }}
-                    </mat-option>
-                    <mat-option *ngIf="frontendSkill.forthTitle" [value]="frontendSkill.forthTitle">
-                      <mat-icon [svgIcon]="frontendSkill.forthIcon || ''" [ngStyle]="{ 'background-color': frontendSkill.forthBgrColor }"></mat-icon>
-                      {{ frontendSkill.forthTitle }}
-                    </mat-option>
-                  </mat-select>
-                </mat-form-field>
-              </form>
-            </ng-container>
-            <ng-template #normalCardTitle>
-              <div class="card-title">
-                <mat-icon [svgIcon]="frontendSkill.icon" [ngStyle]="{ 'background-color': frontendSkill.bgrColor }"></mat-icon>
-                <h3>{{ frontendSkill.title }}</h3>
-              </div>
-            </ng-template>
-          </div>
+        <div class="card-header">
+          <ng-container *ngIf="frontendSkill.hasOptions; else normalCardTitle">
+            <form [formGroup]="form">
+              <mat-form-field appearance="fill">
+                <mat-label>Select</mat-label>
+                <mat-select formControlName="selectedValue">
+                  <mat-option [value]="frontendSkill.title">
+                    <mat-icon [svgIcon]="frontendSkill.icon" [ngStyle]="{ 'background-color': frontendSkill.bgrColor }"></mat-icon>
+                    {{ frontendSkill.title }}
+                  </mat-option>
+                  <mat-option *ngFor="let option of frontendSkill.options" [value]="option.title">
+                    <mat-icon [svgIcon]="option.icon || ''" [ngStyle]="{ 'background-color': option.bgrColor }"></mat-icon>
+                    {{ option.title }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </form>
+          </ng-container>
+          <ng-template #normalCardTitle>
+            <div class="card-title">
+              <mat-icon [svgIcon]="frontendSkill.icon" [ngStyle]="{ 'background-color': frontendSkill.bgrColor }"></mat-icon>
+              <h3>{{ frontendSkill.title }}</h3>
+            </div>
+          </ng-template>
+        </div>
 
 
 				<mat-card-actions>
@@ -81,7 +72,7 @@
 		</button>
 	</div>
 
-  <div class="heading">
+  <!-- <div class="heading">
 		<h2>MEAN STACK Development Specialization</h2>
 	</div>
 	<div class="carousel-container">
@@ -308,7 +299,7 @@
 		<button mat-icon-button class="arrow right" (click)="scroll(1, 3)">
 			<mat-icon>chevron_right</mat-icon>
 		</button>
-	</div>
+	</div> -->
 
 
 </div>
