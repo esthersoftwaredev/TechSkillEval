@@ -26,6 +26,7 @@ import { MatTooltipModule } from "@angular/material/tooltip";
 import { MatRadioModule } from '@angular/material/radio';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
+import { FqaComponent } from './components/fqa/fqa.component';
 
 
 @NgModule({
@@ -36,6 +37,7 @@ import { MatSelectModule } from '@angular/material/select';
 		HomeComponent,
 		AboutComponent,
 		AssessmentsComponent,
+  FqaComponent,
 	],
 	imports: [
 		BrowserModule,
