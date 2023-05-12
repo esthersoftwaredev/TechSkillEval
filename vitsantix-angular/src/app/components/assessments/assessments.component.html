@@ -5,7 +5,7 @@
 		<h2>Frontend Development</h2>
 	</div>
 	<div class="carousel-container">
-		<button mat-icon-button class="arrow left" (click)="scroll(-1)">
+		<button mat-icon-button class="arrow left" (click)="scroll(-1, 0)">
 			<mat-icon>chevron_left</mat-icon>
 		</button>
 		<div #cardsWrapper class="cards-wrapper">
@@ -44,7 +44,7 @@
 				</div>
 			</mat-card>
 		</div>
-		<button mat-icon-button class="arrow right" (click)="scroll(1)">
+		<button mat-icon-button class="arrow right" (click)="scroll(1, 0)">
 			<mat-icon>chevron_right</mat-icon>
 		</button>
 	</div>
@@ -53,7 +53,7 @@
 		<h2>Backend Development</h2>
 	</div>
 	<div class="carousel-container">
-		<button mat-icon-button class="arrow left" (click)="scroll(-1)">
+		<button mat-icon-button class="arrow left" (click)="scroll(-1,1)">
 			<mat-icon>chevron_left</mat-icon>
 		</button>
 		<div #cardsWrapper class="cards-wrapper">
@@ -92,7 +92,7 @@
 				</div>
 			</mat-card>
 		</div>
-		<button mat-icon-button class="arrow right" (click)="scroll(1)">
+		<button mat-icon-button class="arrow right" (click)="scroll(1, 1)">
 			<mat-icon>chevron_right</mat-icon>
 		</button>
 	</div>

@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild } from "@angular/core";
+import { Component, ElementRef, QueryList, ViewChildren } from "@angular/core";
 import { Assessment } from "src/app/models/assessment";
 
 @Component({
@@ -27,12 +27,18 @@ export class AssessmentsComponent {
 		{ icon: "node", bgrColor: "#3b7f3a", title: "nodeJS" },
 		{ icon: "python", bgrColor: "#356895", title: "Python" },
 		{ icon: "django", bgrColor: "#092e20", title: "Django" },
+		{ icon: "django", bgrColor: "#092e20", title: "Django" },
+		{ icon: "django", bgrColor: "#092e20", title: "Django" },
+		{ icon: "django", bgrColor: "#092e20", title: "Django" },
+		{ icon: "django", bgrColor: "#092e20", title: "Django" },
+		{ icon: "django", bgrColor: "#092e20", title: "Django" },
+		{ icon: "django", bgrColor: "#092e20", title: "Django" },
 	];
 
-  @ViewChild('cardsWrapper', { read: ElementRef }) cardsWrapper!: ElementRef;
+  @ViewChildren('cardsWrapper', { read: ElementRef }) cardsWrappers!: QueryList<ElementRef>;
 
-  scroll(direction: number): void {
-    const cardsWrapperElement = this.cardsWrapper.nativeElement as HTMLElement;
+  scroll(direction: number, carouselIndex: number): void {
+    const cardsWrapperElement = this.cardsWrappers.toArray()[carouselIndex].nativeElement as HTMLElement;
     const cardWidth = cardsWrapperElement.children[0].clientWidth;
 
     cardsWrapperElement.scrollBy({
