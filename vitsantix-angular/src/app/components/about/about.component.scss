@@ -12,6 +12,13 @@
     line-height: 1.7rem;
   }
 
+  .emphasis {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: #a268c1;
+  }
+
 	.heading {
 		width: 90%;
 		position: relative;
@@ -58,18 +65,10 @@
         font-size: 1.2rem;
         line-height: 2rem;
       }
-
-      .gatekeeping {
-        font-size: 1.2rem;
-        text-transform: uppercase;
-        font-weight: 500;
-        color: #a268c1;
-      }
     }
 
     mat-accordion {
       width: 50vw;
-
       mat-expansion-panel-header {
         text-transform: uppercase;
         font-size: 1.1rem;
