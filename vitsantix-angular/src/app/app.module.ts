@@ -27,6 +27,7 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
+import { JoinComponent } from './components/join/join.component';
 
 
 @NgModule({
@@ -39,6 +40,7 @@ import { MatInputModule } from '@angular/material/input';
 		AssessmentsComponent,
   FqaComponent,
   LoginComponent,
+  JoinComponent,
 	],
 	imports: [
 		BrowserModule,
