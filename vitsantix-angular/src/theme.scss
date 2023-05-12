@@ -56,6 +56,12 @@ $dark-theme: mat.define-dark-theme(
   .mat-mdc-option {
     color: #e9fafc;
   }
+
+  .mat-expansion-indicator {
+		&::after {
+			color: #ac74d0;
+		}
+  }
 }
 
 .dark-theme {
@@ -79,4 +85,10 @@ $dark-theme: mat.define-dark-theme(
 			color: #ac74d0;
 		}
 	}
+
+  .mat-expansion-indicator {
+		&::after {
+			color: #ac74d0;
+		}
+  }
 }

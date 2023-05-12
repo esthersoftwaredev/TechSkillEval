@@ -2,53 +2,29 @@
 	<div class="heading">
 		<h2>About Vitsantix</h2>
 	</div>
-	<mat-card>
-		<mat-card-header>
-      <p class="emphasis">our name</p>
-			<p>
-				The name "VITSANTIX" is a combination of the words "Video," representing our video-based assessment approach, and "ITSA," an abbreviation for Independent Technical Skills Assessment. Together, they symbolize our commitment to delivering a comprehensive and unbiased evaluation of technical skills through video assessments for both developers and employers seeking genuine and accurate evaluation of technical abilities.
-			</p>
-      <p class="emphasis">what we do</p>
-			<p>
-				VITSANTIX is your ultimate destination for video-based independent technical skills assessments. We cater to developers and employers alike, providing a comprehensive, modern, and reliable platform that accurately measures a developer's skill set. Our aim is to bridge the gap between employers and talented developers by offering a seamless assessment process that values authenticity, fairness, and human interaction.
-			</p>
-      <p class="emphasis">INDEPENDENT TECHNICAL SKILLS ASSESSMENTS</p>
-      <p>At VITSANTIX, we prioritize the performance and potential of each candidate through our independent technical skills assessments. Our platform operates independently, with no affiliation to hiring companies, managers, or teams, ensuring that our primary focus is on the candidate's abilities. This independence allows us to provide candidates with verified credentials that can be utilized at any company of their choosing. By remaining independent, we guarantee that our assessment results are unbiased and free from any ulterior motives. In many instances, candidates may face interviews with company personnel who have personal reasons to sabotage their chances, especially if they perceive the candidate as a threat to their own job security. We stand firmly against such practices and strive to create a fair assessment environment, shielding candidates from any undue influences that could jeopardize their opportunities for success.</p>
-      <p class="emphasis">
-				Stress-free innovative tech assessments.
-			</p>
-      <p>At VITSANTIX, we understand the limitations of conventional platforms that restrict features and fail to provide an environment conducive to showcasing a developer's true abilities. We believe in moving away from outdated techniques and embracing a more modern and accurate approach to validate a developer's skills. In addition, we focus on removing the unnecessary pressure of a high-stakes interview, allowing developers to feel comfortable and relaxed. This enables them to perform at their best using the tools and environment they're most familiar with.</p>
-      <p class="emphasis">
-				We Are Absolutely Tired of the pointless gatekeeping.
-			</p>
-			<p>
-				We stand firmly against gatekeeping in the tech industry, particularly when it involves individuals determining who is capable of being a programmer based on factors such as their educational background or other arbitrary criteria. This form of gatekeeping unfairly restricts access to opportunities and prevents people from working with technologies they are more than capable of handling. VITSANTIX is built on the principles of equality and opportunity, ensuring a fair and unbiased platform for all developers to showcase their skills and gain access to the opportunities they deserve, regardless of their background or previous experiences.
-			</p>
-      <p class="emphasis">creating human jobs that AI cannot replace</p>
-      <p>As many worry about the potential impact of AI on job availability, we at VITSANTIX are committed to creating opportunities for human jobs that AI cannot replace. No AI can effectively conduct the kind of in-depth, video-based assessments we provide, which call for human intuition, empathy, and understanding. By emphasizing the importance of human interaction in our assessment process, we are fostering an environment that values and supports human expertise and connection, while also embracing a modern and accurate approach to validating a developer's skills.</p>
-      <p class="emphasis">our certificates</p>
-      <p>In today's rapidly evolving landscape, AI advancements have simplified the process of passing exams and earning certificates through online courses, often without accurately evaluating one's abilities. To address this, VITSANTIX emphasizes video-based assessments featuring real human interaction. We issue certificates only after candidates have successfully undergone a thorough assessment conducted by a real person, ensuring a more genuine evaluation of their capabilities.</p>
-			<p>
-				Join us at <span class="emphasis">VITSANTIX</span> and experience the future of technical skills
-				assessment today!
-			</p>
-		</mat-card-header>
-	</mat-card>
+
+	<mat-accordion>
+		<mat-expansion-panel *ngFor="let about of aboutPanel">
+			<mat-expansion-panel-header>
+				<mat-panel-title>
+					{{ about.title }}
+				</mat-panel-title>
+			</mat-expansion-panel-header>
+			<p>{{ about.content }}</p>
+		</mat-expansion-panel>
+	</mat-accordion>
 
 	<div class="heading">
-		<h2>How We Plan to Achieve Our Goal:
-    </h2>
+		<h2>How We Plan to Achieve Our Goal:</h2>
 	</div>
-	<mat-card>
-		<mat-accordion>
-			<mat-expansion-panel *ngFor="let goal of goalsPanel">
-				<mat-expansion-panel-header>
-					<mat-panel-title>
-						{{ goal.title }}
-					</mat-panel-title>
-				</mat-expansion-panel-header>
-				<p>{{ goal.content }}</p>
-			</mat-expansion-panel>
-		</mat-accordion>
-	</mat-card>
+	<mat-accordion>
+		<mat-expansion-panel *ngFor="let goal of goalsPanel">
+			<mat-expansion-panel-header>
+				<mat-panel-title>
+					{{ goal.title }}
+				</mat-panel-title>
+			</mat-expansion-panel-header>
+			<p>{{ goal.content }}</p>
+		</mat-expansion-panel>
+	</mat-accordion>
 </div>

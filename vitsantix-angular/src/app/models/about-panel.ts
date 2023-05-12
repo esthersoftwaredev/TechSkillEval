@@ -1,4 +1,4 @@
-export interface OurGoalPanel {
+export interface AboutPanel {
   title: string;
   content: string;
 }
