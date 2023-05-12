@@ -4,16 +4,16 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { DomSanitizer } from "@angular/platform-browser";
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from "./app-routing.module";
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from "./app.component";
-
 import { HeaderComponent } from "./components/header/header.component";
 import { FooterComponent } from "./components/footer/footer.component";
 import { HomeComponent } from "./components/home/home.component";
 import { AssessmentsComponent } from "./components/assessments/assessments.component";
 import { AboutComponent } from "./components/about/about.component";
-
+import { FqaComponent } from './components/fqa/fqa.component';
+import { LoginComponent } from './components/login/login.component';
 
 import { MatToolbarModule } from "@angular/material/toolbar";
 import { MatExpansionModule } from '@angular/material/expansion';
@@ -26,7 +26,7 @@ import { MatTooltipModule } from "@angular/material/tooltip";
 import { MatRadioModule } from '@angular/material/radio';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
-import { FqaComponent } from './components/fqa/fqa.component';
+import { MatInputModule } from '@angular/material/input';
 
 
 @NgModule({
@@ -38,12 +38,14 @@ import { FqaComponent } from './components/fqa/fqa.component';
 		AboutComponent,
 		AssessmentsComponent,
   FqaComponent,
+  LoginComponent,
 	],
 	imports: [
 		BrowserModule,
 		BrowserAnimationsModule,
     HttpClientModule,
 		AppRoutingModule,
+    FormsModule,
     ReactiveFormsModule,
 		MatToolbarModule,
 		MatTooltipModule,
@@ -55,7 +57,8 @@ import { FqaComponent } from './components/fqa/fqa.component';
 		MatIconModule,
     MatRadioModule,
     MatFormFieldModule,
-    MatSelectModule
+    MatSelectModule,
+    MatInputModule
 	],
 	providers: [],
 	bootstrap: [AppComponent],

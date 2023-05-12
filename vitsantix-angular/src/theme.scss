@@ -62,6 +62,12 @@ $dark-theme: mat.define-dark-theme(
 			color: #ac74d0;
 		}
   }
+
+  .login {
+    button {
+      color: #333;
+    }
+  }
 }
 
 .dark-theme {
@@ -90,5 +96,11 @@ $dark-theme: mat.define-dark-theme(
 		&::after {
 			color: #ac74d0;
 		}
+  }
+
+  .login {
+    button {
+      color: #fff;
+    }
   }
 }
