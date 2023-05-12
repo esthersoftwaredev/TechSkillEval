@@ -10,46 +10,43 @@
 		</button>
 		<div #cardsWrapper class="cards-wrapper">
 			<mat-card *ngFor="let frontendSkill of frontendSkills; let i = index">
-				<div class="card-header">
-					<div class="card-title">
-						<mat-icon
-							[svgIcon]="frontendSkill.icon"
-							[ngStyle]="{ 'background-color': frontendSkill.bgrColor }"
-						></mat-icon>
-						<h3>{{ frontendSkill.title }}</h3>
-						<mat-radio-button
-							*ngIf="frontendSkill.secondIcon"
-							[value]="frontendSkill.title"
-							[(ngModel)]="selectedValue"
-						></mat-radio-button>
-					</div>
-					<div *ngIf="frontendSkill.secondIcon" class="card-title">
-						<mat-icon
-							[svgIcon]="frontendSkill.secondIcon"
-							[ngStyle]="{ 'background-color': frontendSkill.secondBgrColor }"
-						></mat-icon>
-						<h3>
-							{{ frontendSkill.secondTitle }}
-						</h3>
-						<mat-radio-button
-							[value]="frontendSkill.secondTitle"
-							[(ngModel)]="selectedValue"
-						></mat-radio-button>
-					</div>
-					<div *ngIf="frontendSkill.thirdIcon" class="card-title">
-						<mat-icon
-							[svgIcon]="frontendSkill.thirdIcon"
-							[ngStyle]="{ 'background-color': frontendSkill.thirdBgrColor }"
-						></mat-icon>
-						<h3>
-							{{ frontendSkill.thirdTitle }}
-						</h3>
-						<mat-radio-button
-							[value]="frontendSkill.thirdTitle"
-							[(ngModel)]="selectedValue"
-						></mat-radio-button>
-					</div>
-				</div>
+
+
+          <div class="card-header">
+            <ng-container *ngIf="frontendSkill.secondTitle || frontendSkill.thirdTitle || frontendSkill.forthTitle; else normalCardTitle">
+              <form [formGroup]="form">
+                <mat-form-field appearance="fill">
+                  <mat-label>{{ frontendSkill.title }}</mat-label>
+                  <mat-select formControlName="selectedValue">
+                    <mat-option [value]="frontendSkill.title">
+                      <mat-icon [svgIcon]="frontendSkill.icon" [ngStyle]="{ 'background-color': frontendSkill.bgrColor }"></mat-icon>
+                      {{ frontendSkill.title }}
+                    </mat-option>
+                    <mat-option *ngIf="frontendSkill.secondTitle" [value]="frontendSkill.secondTitle">
+                      <mat-icon [svgIcon]="frontendSkill.secondIcon || ''" [ngStyle]="{ 'background-color': frontendSkill.secondBgrColor }"></mat-icon>
+                      {{ frontendSkill.secondTitle }}
+                    </mat-option>
+                    <mat-option *ngIf="frontendSkill.thirdTitle" [value]="frontendSkill.thirdTitle">
+                      <mat-icon [svgIcon]="frontendSkill.thirdIcon || ''" [ngStyle]="{ 'background-color': frontendSkill.thirdBgrColor }"></mat-icon>
+                      {{ frontendSkill.thirdTitle }}
+                    </mat-option>
+                    <mat-option *ngIf="frontendSkill.forthTitle" [value]="frontendSkill.forthTitle">
+                      <mat-icon [svgIcon]="frontendSkill.forthIcon || ''" [ngStyle]="{ 'background-color': frontendSkill.forthBgrColor }"></mat-icon>
+                      {{ frontendSkill.forthTitle }}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </form>
+            </ng-container>
+            <ng-template #normalCardTitle>
+              <div class="card-title">
+                <mat-icon [svgIcon]="frontendSkill.icon" [ngStyle]="{ 'background-color': frontendSkill.bgrColor }"></mat-icon>
+                <h3>{{ frontendSkill.title }}</h3>
+              </div>
+            </ng-template>
+          </div>
+
+
 				<mat-card-actions>
 					<p>Schedule:</p>
 					<button
@@ -90,46 +87,41 @@
 	<div class="carousel-container">
 		<div #cardsWrapper class="cards-wrapper">
 			<mat-card *ngFor="let meanStackSkill of meanStackSkills; let i = index">
-				<div class="card-header">
-					<div class="card-title">
-						<mat-icon
-							[svgIcon]="meanStackSkill.icon"
-							[ngStyle]="{ 'background-color': meanStackSkill.bgrColor }"
-						></mat-icon>
-						<h3>{{ meanStackSkill.title }}</h3>
-						<mat-radio-button
-							*ngIf="meanStackSkill.secondIcon"
-							[value]="meanStackSkill.title"
-							[(ngModel)]="selectedValue"
-						></mat-radio-button>
-					</div>
-					<div *ngIf="meanStackSkill.secondIcon" class="card-title">
-						<mat-icon
-							[svgIcon]="meanStackSkill.secondIcon"
-							[ngStyle]="{ 'background-color': meanStackSkill.secondBgrColor }"
-						></mat-icon>
-						<h3>
-							{{ meanStackSkill.secondTitle }}
-						</h3>
-						<mat-radio-button
-							[value]="meanStackSkill.secondTitle"
-							[(ngModel)]="selectedValue"
-						></mat-radio-button>
-					</div>
-					<div *ngIf="meanStackSkill.thirdIcon" class="card-title">
-						<mat-icon
-							[svgIcon]="meanStackSkill.thirdIcon"
-							[ngStyle]="{ 'background-color': meanStackSkill.thirdBgrColor }"
-						></mat-icon>
-						<h3>
-							{{ meanStackSkill.thirdTitle }}
-						</h3>
-						<mat-radio-button
-							[value]="meanStackSkill.thirdTitle"
-							[(ngModel)]="selectedValue"
-						></mat-radio-button>
-					</div>
-				</div>
+
+        <div class="card-header">
+          <ng-container *ngIf="meanStackSkill.secondTitle || meanStackSkill.thirdTitle || meanStackSkill.forthTitle; else normalCardTitle">
+            <form [formGroup]="form">
+              <mat-form-field appearance="fill">
+                <mat-label>{{ meanStackSkill.title }}</mat-label>
+                <mat-select formControlName="selectedValue">
+                  <mat-option [value]="meanStackSkill.title">
+                    <mat-icon [svgIcon]="meanStackSkill.icon" [ngStyle]="{ 'background-color': meanStackSkill.bgrColor }"></mat-icon>
+                    {{ meanStackSkill.title }}
+                  </mat-option>
+                  <mat-option *ngIf="meanStackSkill.secondTitle" [value]="meanStackSkill.secondTitle">
+                    <mat-icon [svgIcon]="meanStackSkill.secondIcon || ''" [ngStyle]="{ 'background-color': meanStackSkill.secondBgrColor }"></mat-icon>
+                    {{ meanStackSkill.secondTitle }}
+                  </mat-option>
+                  <mat-option *ngIf="meanStackSkill.thirdTitle" [value]="meanStackSkill.thirdTitle">
+                    <mat-icon [svgIcon]="meanStackSkill.thirdIcon || ''" [ngStyle]="{ 'background-color': meanStackSkill.thirdBgrColor }"></mat-icon>
+                    {{ meanStackSkill.thirdTitle }}
+                  </mat-option>
+                  <mat-option *ngIf="meanStackSkill.forthTitle" [value]="meanStackSkill.forthTitle">
+                    <mat-icon [svgIcon]="meanStackSkill.forthIcon || ''" [ngStyle]="{ 'background-color': meanStackSkill.forthBgrColor }"></mat-icon>
+                    {{ meanStackSkill.forthTitle }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </form>
+          </ng-container>
+          <ng-template #normalCardTitle>
+            <div class="card-title">
+              <mat-icon [svgIcon]="meanStackSkill.icon" [ngStyle]="{ 'background-color': meanStackSkill.bgrColor }"></mat-icon>
+              <h3>{{ meanStackSkill.title }}</h3>
+            </div>
+          </ng-template>
+        </div>
+
 				<mat-card-actions>
 					<p>Schedule:</p>
 					<button
@@ -167,46 +159,41 @@
 	<div class="carousel-container">
 		<div #cardsWrapper class="cards-wrapper">
 			<mat-card *ngFor="let mernStackSkill of mernStackSkills; let i = index">
-				<div class="card-header">
-					<div class="card-title">
-						<mat-icon
-							[svgIcon]="mernStackSkill.icon"
-							[ngStyle]="{ 'background-color': mernStackSkill.bgrColor }"
-						></mat-icon>
-						<h3>{{ mernStackSkill.title }}</h3>
-						<mat-radio-button
-							*ngIf="mernStackSkill.secondIcon"
-							[value]="mernStackSkill.title"
-							[(ngModel)]="selectedValue"
-						></mat-radio-button>
-					</div>
-					<div *ngIf="mernStackSkill.secondIcon" class="card-title">
-						<mat-icon
-							[svgIcon]="mernStackSkill.secondIcon"
-							[ngStyle]="{ 'background-color': mernStackSkill.secondBgrColor }"
-						></mat-icon>
-						<h3>
-							{{ mernStackSkill.secondTitle }}
-						</h3>
-						<mat-radio-button
-							[value]="mernStackSkill.secondTitle"
-							[(ngModel)]="selectedValue"
-						></mat-radio-button>
-					</div>
-					<div *ngIf="mernStackSkill.thirdIcon" class="card-title">
-						<mat-icon
-							[svgIcon]="mernStackSkill.thirdIcon"
-							[ngStyle]="{ 'background-color': mernStackSkill.thirdBgrColor }"
-						></mat-icon>
-						<h3>
-							{{ mernStackSkill.thirdTitle }}
-						</h3>
-						<mat-radio-button
-							[value]="mernStackSkill.thirdTitle"
-							[(ngModel)]="selectedValue"
-						></mat-radio-button>
-					</div>
-				</div>
+
+        <div class="card-header">
+          <ng-container *ngIf="mernStackSkill.secondTitle || mernStackSkill.thirdTitle || mernStackSkill.forthTitle; else normalCardTitle">
+            <form [formGroup]="form">
+              <mat-form-field appearance="fill">
+                <mat-label>{{ mernStackSkill.title }}</mat-label>
+                <mat-select formControlName="selectedValue">
+                  <mat-option [value]="mernStackSkill.title">
+                    <mat-icon [svgIcon]="mernStackSkill.icon" [ngStyle]="{ 'background-color': mernStackSkill.bgrColor }"></mat-icon>
+                    {{ mernStackSkill.title }}
+                  </mat-option>
+                  <mat-option *ngIf="mernStackSkill.secondTitle" [value]="mernStackSkill.secondTitle">
+                    <mat-icon [svgIcon]="mernStackSkill.secondIcon || ''" [ngStyle]="{ 'background-color': mernStackSkill.secondBgrColor }"></mat-icon>
+                    {{ mernStackSkill.secondTitle }}
+                  </mat-option>
+                  <mat-option *ngIf="mernStackSkill.thirdTitle" [value]="mernStackSkill.thirdTitle">
+                    <mat-icon [svgIcon]="mernStackSkill.thirdIcon || ''" [ngStyle]="{ 'background-color': mernStackSkill.thirdBgrColor }"></mat-icon>
+                    {{ mernStackSkill.thirdTitle }}
+                  </mat-option>
+                  <mat-option *ngIf="mernStackSkill.forthTitle" [value]="mernStackSkill.forthTitle">
+                    <mat-icon [svgIcon]="mernStackSkill.forthIcon || ''" [ngStyle]="{ 'background-color': mernStackSkill.forthBgrColor }"></mat-icon>
+                    {{ mernStackSkill.forthTitle }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </form>
+          </ng-container>
+          <ng-template #normalCardTitle>
+            <div class="card-title">
+              <mat-icon [svgIcon]="mernStackSkill.icon" [ngStyle]="{ 'background-color': mernStackSkill.bgrColor }"></mat-icon>
+              <h3>{{ mernStackSkill.title }}</h3>
+            </div>
+          </ng-template>
+        </div>
+
 				<mat-card-actions>
 					<p>Schedule:</p>
 					<button
@@ -247,33 +234,41 @@
 		</button>
 		<div #cardsWrapper class="cards-wrapper">
 			<mat-card *ngFor="let backendSkill of backendSkills; let i = index">
-				<div class="card-header">
-					<div class="card-title">
-						<mat-icon
-							[svgIcon]="backendSkill.icon"
-							[ngStyle]="{ 'background-color': backendSkill.bgrColor }"
-						></mat-icon>
-						<h3>{{ backendSkill.title }}</h3>
-						<mat-radio-button
-							*ngIf="backendSkill.secondIcon"
-							[value]="backendSkill.title"
-							[(ngModel)]="selectedValue"
-						></mat-radio-button>
-					</div>
-					<div *ngIf="backendSkill.secondIcon" class="card-title">
-						<mat-icon
-							[svgIcon]="backendSkill.secondIcon"
-							[ngStyle]="{ 'background-color': backendSkill.secondBgrColor }"
-						></mat-icon>
-						<h3>
-							{{ backendSkill.secondTitle }}
-						</h3>
-						<mat-radio-button
-							[value]="backendSkill.secondTitle"
-							[(ngModel)]="selectedValue"
-						></mat-radio-button>
-					</div>
-				</div>
+
+        <div class="card-header">
+          <ng-container *ngIf="backendSkill.secondTitle || backendSkill.thirdTitle || backendSkill.forthTitle; else normalCardTitle">
+            <form [formGroup]="form">
+              <mat-form-field appearance="fill">
+                <mat-label>{{ backendSkill.title }}</mat-label>
+                <mat-select formControlName="selectedValue">
+                  <mat-option [value]="backendSkill.title">
+                    <mat-icon [svgIcon]="backendSkill.icon" [ngStyle]="{ 'background-color': backendSkill.bgrColor }"></mat-icon>
+                    {{ backendSkill.title }}
+                  </mat-option>
+                  <mat-option *ngIf="backendSkill.secondTitle" [value]="backendSkill.secondTitle">
+                    <mat-icon [svgIcon]="backendSkill.secondIcon || ''" [ngStyle]="{ 'background-color': backendSkill.secondBgrColor }"></mat-icon>
+                    {{ backendSkill.secondTitle }}
+                  </mat-option>
+                  <mat-option *ngIf="backendSkill.thirdTitle" [value]="backendSkill.thirdTitle">
+                    <mat-icon [svgIcon]="backendSkill.thirdIcon || ''" [ngStyle]="{ 'background-color': backendSkill.thirdBgrColor }"></mat-icon>
+                    {{ backendSkill.thirdTitle }}
+                  </mat-option>
+                  <mat-option *ngIf="backendSkill.forthTitle" [value]="backendSkill.forthTitle">
+                    <mat-icon [svgIcon]="backendSkill.forthIcon || ''" [ngStyle]="{ 'background-color': backendSkill.forthBgrColor }"></mat-icon>
+                    {{ backendSkill.forthTitle }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </form>
+          </ng-container>
+          <ng-template #normalCardTitle>
+            <div class="card-title">
+              <mat-icon [svgIcon]="backendSkill.icon" [ngStyle]="{ 'background-color': backendSkill.bgrColor }"></mat-icon>
+              <h3>{{ backendSkill.title }}</h3>
+            </div>
+          </ng-template>
+        </div>
+
 				<mat-card-actions>
 					<p>Schedule:</p>
 					<button

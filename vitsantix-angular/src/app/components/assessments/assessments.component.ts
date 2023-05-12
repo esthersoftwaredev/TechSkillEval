@@ -1,4 +1,5 @@
-import { Component, ElementRef, QueryList, ViewChildren } from "@angular/core";
+import { Component, ElementRef, QueryList, ViewChildren, OnInit } from "@angular/core";
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { Assessment } from "src/app/models/assessment";
 
 @Component({
@@ -6,9 +7,12 @@ import { Assessment } from "src/app/models/assessment";
 	templateUrl: "./assessments.component.html",
 	styleUrls: ["./assessments.component.scss"],
 })
-export class AssessmentsComponent {
+export class AssessmentsComponent implements OnInit {
 	hoverFlags: { [key: string]: { [key: string]: boolean } } = {};
-	selectedValue: string | null = null;
+	// selectedValue: string | null = null;
+  form!: FormGroup;
+
+  constructor(private formBuilder: FormBuilder) {}
 
 	frontendSkills: Assessment[] = [
 		{ icon: "html5", bgrColor: "#f38942", title: "HTML" },
@@ -41,14 +45,16 @@ export class AssessmentsComponent {
 			icon: "angular",
 			secondIcon: "react",
 			thirdIcon: "vue",
+			forthIcon: "svelte",
 			bgrColor: "#de0031",
 			secondBgrColor: "#4cbad8",
 			thirdBgrColor: "#41b883",
+			forthBgrColor: "#ff3e00",
 			title: "Angular",
 			secondTitle: "React",
 			thirdTitle: "Vue",
+			forthTitle: "Svelte",
 		},
-		{ icon: "svelte", bgrColor: "#ff3e00", title: "Svelte" },
 	];
 
 	meanStackSkills: Assessment[] = [
@@ -127,6 +133,12 @@ export class AssessmentsComponent {
 		{ icon: "php", bgrColor: "#4b568c", title: "PHP" },
 		{ icon: "ruby", bgrColor: "#eb5745", title: "Ruby" },
 	];
+
+  ngOnInit(): void {
+    this.form = this.formBuilder.group({
+      selectedValue: null,
+    });
+  }
 
 	@ViewChildren("cardsWrapper", { read: ElementRef })
 	cardsWrappers!: QueryList<ElementRef>;

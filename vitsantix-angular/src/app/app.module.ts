@@ -1,12 +1,13 @@
 import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { DomSanitizer } from "@angular/platform-browser";
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from "./app-routing.module";
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from "./app.component";
-import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 import { HeaderComponent } from "./components/header/header.component";
 import { FooterComponent } from "./components/footer/footer.component";
@@ -24,6 +25,9 @@ import { MatButtonModule } from "@angular/material/button";
 import { MatIconModule, MatIconRegistry } from "@angular/material/icon";
 import { MatTooltipModule } from "@angular/material/tooltip";
 import { MatRadioModule } from '@angular/material/radio';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
+
 
 @NgModule({
 	declarations: [
@@ -38,8 +42,11 @@ import { MatRadioModule } from '@angular/material/radio';
 		BrowserModule,
 		BrowserAnimationsModule,
     HttpClientModule,
+		AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
 		MatToolbarModule,
+		MatTooltipModule,
     MatExpansionModule,
 		MatSlideToggleModule,
 		MatCardModule,
@@ -47,8 +54,8 @@ import { MatRadioModule } from '@angular/material/radio';
 		MatButtonModule,
 		MatIconModule,
     MatRadioModule,
-		MatTooltipModule,
-		AppRoutingModule,
+    MatFormFieldModule,
+    MatSelectModule
 	],
 	providers: [],
 	bootstrap: [AppComponent],
