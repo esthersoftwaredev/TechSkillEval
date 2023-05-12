@@ -93,6 +93,7 @@
             <form [formGroup]="form">
               <mat-form-field appearance="fill">
                 <mat-label>{{ meanStackSkill.title }}</mat-label>
+                <mat-label *ngIf="meanStackSkill.secondTitle"> / {{meanStackSkill.secondTitle}}</mat-label>
                 <mat-select formControlName="selectedValue">
                   <mat-option [value]="meanStackSkill.title">
                     <mat-icon [svgIcon]="meanStackSkill.icon" [ngStyle]="{ 'background-color': meanStackSkill.bgrColor }"></mat-icon>
@@ -165,6 +166,7 @@
             <form [formGroup]="form">
               <mat-form-field appearance="fill">
                 <mat-label>{{ mernStackSkill.title }}</mat-label>
+                <mat-label *ngIf="mernStackSkill.secondTitle"> / {{mernStackSkill.secondTitle}}</mat-label>
                 <mat-select formControlName="selectedValue">
                   <mat-option [value]="mernStackSkill.title">
                     <mat-icon [svgIcon]="mernStackSkill.icon" [ngStyle]="{ 'background-color': mernStackSkill.bgrColor }"></mat-icon>
@@ -236,10 +238,11 @@
 			<mat-card *ngFor="let backendSkill of backendSkills; let i = index">
 
         <div class="card-header">
-          <ng-container *ngIf="backendSkill.secondTitle || backendSkill.thirdTitle || backendSkill.forthTitle; else normalCardTitle">
+          <ng-container *ngIf="backendSkill.secondTitle || backendSkill.thirdTitle || backendSkill.forthTitle || backendSkill.fifthTitle; else normalCardTitle">
             <form [formGroup]="form">
               <mat-form-field appearance="fill">
                 <mat-label>{{ backendSkill.title }}</mat-label>
+                <mat-label *ngIf="backendSkill.secondTitle"> / {{backendSkill.secondTitle}}</mat-label>
                 <mat-select formControlName="selectedValue">
                   <mat-option [value]="backendSkill.title">
                     <mat-icon [svgIcon]="backendSkill.icon" [ngStyle]="{ 'background-color': backendSkill.bgrColor }"></mat-icon>
@@ -256,6 +259,10 @@
                   <mat-option *ngIf="backendSkill.forthTitle" [value]="backendSkill.forthTitle">
                     <mat-icon [svgIcon]="backendSkill.forthIcon || ''" [ngStyle]="{ 'background-color': backendSkill.forthBgrColor }"></mat-icon>
                     {{ backendSkill.forthTitle }}
+                  </mat-option>
+                  <mat-option *ngIf="backendSkill.fifthTitle" [value]="backendSkill.fifthTitle">
+                    <mat-icon [svgIcon]="backendSkill.fifthIcon || ''" [ngStyle]="{ 'background-color': backendSkill.fifthBgrColor }"></mat-icon>
+                    {{ backendSkill.fifthTitle }}
                   </mat-option>
                 </mat-select>
               </mat-form-field>
