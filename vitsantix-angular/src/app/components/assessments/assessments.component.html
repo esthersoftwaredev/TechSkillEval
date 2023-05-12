@@ -15,7 +15,8 @@
             <ng-container *ngIf="frontendSkill.secondTitle || frontendSkill.thirdTitle || frontendSkill.forthTitle; else normalCardTitle">
               <form [formGroup]="form">
                 <mat-form-field appearance="fill">
-                  <mat-label>{{ frontendSkill.title }} / {{ frontendSkill.secondTitle }} / {{ frontendSkill.thirdTitle }}</mat-label>
+                  <mat-label color="primary">{{ frontendSkill.title }}</mat-label>
+                  <mat-label *ngIf="frontendSkill.secondTitle"> / {{frontendSkill.secondTitle}}</mat-label>
                   <mat-select formControlName="selectedValue">
                     <mat-option [value]="frontendSkill.title">
                       <mat-icon [svgIcon]="frontendSkill.icon" [ngStyle]="{ 'background-color': frontendSkill.bgrColor }"></mat-icon>
