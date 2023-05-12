@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ThemeService } from 'src/app/services/theme.service';
+import { NavItem } from 'src/app/models/nav-item';
 
 @Component({
   selector: 'app-header',
@@ -11,6 +12,14 @@ export class HeaderComponent implements OnInit {
   isDarkTheme = true;
 
   constructor(private themeService: ThemeService) {}
+
+  navItems: NavItem[] = [
+    { label: 'HOME', link: '/home' },
+    { label: 'ITSAs', link: '/assessments' },
+    { label: 'ABOUT', link: '/about' },
+    { label: 'LOG IN', link: '/login' },
+    { label: 'JOIN', link: '/join' },
+  ];
 
   ngOnInit(): void {
     this.themeService.theme$.subscribe((theme) => {

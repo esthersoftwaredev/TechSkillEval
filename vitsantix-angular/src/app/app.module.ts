@@ -18,6 +18,7 @@ import { MatToolbarModule } from "@angular/material/toolbar";
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatSlideToggleModule } from "@angular/material/slide-toggle";
 import { MatCardModule } from "@angular/material/card";
+import { MatListModule } from '@angular/material/list';
 import { MatButtonModule } from "@angular/material/button";
 import { MatIconModule, MatIconRegistry } from "@angular/material/icon";
 import { MatTooltipModule } from "@angular/material/tooltip";
@@ -39,6 +40,7 @@ import { MatTooltipModule } from "@angular/material/tooltip";
     MatExpansionModule,
 		MatSlideToggleModule,
 		MatCardModule,
+    MatListModule,
 		MatButtonModule,
 		MatIconModule,
 
