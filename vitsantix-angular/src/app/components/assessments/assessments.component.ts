@@ -11,9 +11,7 @@ export class AssessmentsComponent {
 	selectedValue: string | null = null;
 
 	frontendSkills: Assessment[] = [
-		{ icon: "html5",
-    bgrColor: "#f38942",
-    title: "HTML" },
+		{ icon: "html5", bgrColor: "#f38942", title: "HTML" },
 		{
 			icon: "css3",
 			secondIcon: "sass",
@@ -30,9 +28,7 @@ export class AssessmentsComponent {
 			title: "Bootstrap",
 			secondTitle: "Tailwind CSS",
 		},
-		{ icon: "jquery",
-    bgrColor: "#193556",
-    title: "jQuery" },
+		{ icon: "jquery", bgrColor: "#193556", title: "jQuery" },
 		{
 			icon: "javascript",
 			secondIcon: "typescript",
@@ -52,15 +48,11 @@ export class AssessmentsComponent {
 			secondTitle: "React",
 			thirdTitle: "Vue",
 		},
-		{ icon: "svelte",
-    bgrColor: "#ff3e00",
-    title: "Svelte" },
+		{ icon: "svelte", bgrColor: "#ff3e00", title: "Svelte" },
 	];
 
 	meanStackSkills: Assessment[] = [
-    { icon: "html5",
-    bgrColor: "#f38942",
-    title: "HTML" },
+		{ icon: "html5", bgrColor: "#f38942", title: "HTML" },
 		{
 			icon: "css3",
 			secondIcon: "sass",
@@ -74,18 +66,12 @@ export class AssessmentsComponent {
 			bgrColor: "#de0031",
 			title: "Angular",
 		},
-		{ icon: "node",
-    bgrColor: "#3b7f3a",
-    title: "nodeJS" },
-		{ icon: "mongodb",
-    bgrColor: "#001e2b",
-    title: "MongoDB" },
+		{ icon: "node", bgrColor: "#3b7f3a", title: "nodeJS" },
+		{ icon: "mongodb", bgrColor: "#001e2b", title: "MongoDB" },
 	];
 
 	mernStackSkills: Assessment[] = [
-    { icon: "html5",
-    bgrColor: "#f38942",
-    title: "HTML" },
+		{ icon: "html5", bgrColor: "#f38942", title: "HTML" },
 		{
 			icon: "css3",
 			secondIcon: "sass",
@@ -99,12 +85,16 @@ export class AssessmentsComponent {
 			bgrColor: "#4cbad8",
 			title: "React",
 		},
-		{ icon: "node",
-    bgrColor: "#3b7f3a",
-    title: "nodeJS" },
-		{ icon: "mongodb",
-    bgrColor: "#001e2b",
-    title: "MongoDB" },
+		{
+			icon: "node",
+			bgrColor: "#3b7f3a",
+			title: "nodeJS",
+		},
+		{
+			icon: "mongodb",
+			bgrColor: "#001e2b",
+			title: "MongoDB",
+		},
 	];
 
 	backendSkills: Assessment[] = [
@@ -118,6 +108,11 @@ export class AssessmentsComponent {
 		{ icon: "dot-net", bgrColor: "#6d409d", title: ".NET" },
 		{ icon: "php", bgrColor: "#4b568c", title: "PHP" },
 		{ icon: "ruby", bgrColor: "#eb5745", title: "Ruby" },
+		{
+			icon: "mongodb",
+			bgrColor: "#001e2b",
+			title: "MongoDB",
+		},
 	];
 
 	fullstackSkills: Assessment[] = [
