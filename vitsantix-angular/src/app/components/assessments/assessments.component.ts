@@ -109,8 +109,15 @@ export class AssessmentsComponent implements OnInit {
 	];
 
 	backendSkills: Assessment[] = [
-		{ icon: "node", bgrColor: "#3b7f3a", title: "nodeJS" },
-		{ icon: "python", bgrColor: "#356895", title: "Python" },
+		{
+      icon: "node",
+      secondIcon: "python",
+      bgrColor: "#3b7f3a",
+      secondBgrColor: "#356895",
+      title: "nodeJS",
+      secondTitle: "Python",
+    },
+		// { icon: "python", bgrColor: "#356895", title: "Python" },
 		{ icon: "django", bgrColor: "#092e20", title: "Django" },
 		{ icon: "java", bgrColor: "#131f3f", title: "Java" },
 		{ icon: "go", bgrColor: "#67d7e1", title: "Go" },
