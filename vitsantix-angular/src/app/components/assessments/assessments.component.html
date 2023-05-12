@@ -84,11 +84,165 @@
 		</button>
 	</div>
 
+  <div class="heading">
+		<h2>MEAN STACK Development</h2>
+	</div>
+	<div class="carousel-container">
+		<div #cardsWrapper class="cards-wrapper">
+			<mat-card *ngFor="let meanStackSkill of meanStackSkills; let i = index">
+				<div class="card-header">
+					<div class="card-title">
+						<mat-icon
+							[svgIcon]="meanStackSkill.icon"
+							[ngStyle]="{ 'background-color': meanStackSkill.bgrColor }"
+						></mat-icon>
+						<h3>{{ meanStackSkill.title }}</h3>
+						<mat-radio-button
+							*ngIf="meanStackSkill.secondIcon"
+							[value]="meanStackSkill.title"
+							[(ngModel)]="selectedValue"
+						></mat-radio-button>
+					</div>
+					<div *ngIf="meanStackSkill.secondIcon" class="card-title">
+						<mat-icon
+							[svgIcon]="meanStackSkill.secondIcon"
+							[ngStyle]="{ 'background-color': meanStackSkill.secondBgrColor }"
+						></mat-icon>
+						<h3>
+							{{ meanStackSkill.secondTitle }}
+						</h3>
+						<mat-radio-button
+							[value]="meanStackSkill.secondTitle"
+							[(ngModel)]="selectedValue"
+						></mat-radio-button>
+					</div>
+					<div *ngIf="meanStackSkill.thirdIcon" class="card-title">
+						<mat-icon
+							[svgIcon]="meanStackSkill.thirdIcon"
+							[ngStyle]="{ 'background-color': meanStackSkill.thirdBgrColor }"
+						></mat-icon>
+						<h3>
+							{{ meanStackSkill.thirdTitle }}
+						</h3>
+						<mat-radio-button
+							[value]="meanStackSkill.thirdTitle"
+							[(ngModel)]="selectedValue"
+						></mat-radio-button>
+					</div>
+				</div>
+				<mat-card-actions>
+					<p>Schedule:</p>
+					<button
+						mat-button
+						(mouseenter)="onButtonMouseEnter(i, 'verbal')"
+						(mouseleave)="onButtonMouseLeave(i, 'verbal')"
+					>
+						<span class="button-text" *ngIf="!hoverFlags[i]?.['verbal']"
+							>Video ITSA</span
+						>
+						<span class="hover-text" *ngIf="hoverFlags[i]?.['verbal']"
+							>Select</span
+						>
+					</button>
+					<button
+						mat-button
+						(mouseenter)="onButtonMouseEnter(i, 'practical')"
+						(mouseleave)="onButtonMouseLeave(i, 'practical')"
+					>
+						<span class="button-text" *ngIf="!hoverFlags[i]?.['practical']"
+							>Interview PREP</span
+						>
+						<span class="hover-text" *ngIf="hoverFlags[i]?.['practical']"
+							>Select</span
+						>
+					</button>
+				</mat-card-actions>
+			</mat-card>
+		</div>
+	</div>
+
+  <div class="heading">
+		<h2>MERN STACK Development</h2>
+	</div>
+	<div class="carousel-container">
+		<div #cardsWrapper class="cards-wrapper">
+			<mat-card *ngFor="let mernStackSkill of mernStackSkills; let i = index">
+				<div class="card-header">
+					<div class="card-title">
+						<mat-icon
+							[svgIcon]="mernStackSkill.icon"
+							[ngStyle]="{ 'background-color': mernStackSkill.bgrColor }"
+						></mat-icon>
+						<h3>{{ mernStackSkill.title }}</h3>
+						<mat-radio-button
+							*ngIf="mernStackSkill.secondIcon"
+							[value]="mernStackSkill.title"
+							[(ngModel)]="selectedValue"
+						></mat-radio-button>
+					</div>
+					<div *ngIf="mernStackSkill.secondIcon" class="card-title">
+						<mat-icon
+							[svgIcon]="mernStackSkill.secondIcon"
+							[ngStyle]="{ 'background-color': mernStackSkill.secondBgrColor }"
+						></mat-icon>
+						<h3>
+							{{ mernStackSkill.secondTitle }}
+						</h3>
+						<mat-radio-button
+							[value]="mernStackSkill.secondTitle"
+							[(ngModel)]="selectedValue"
+						></mat-radio-button>
+					</div>
+					<div *ngIf="mernStackSkill.thirdIcon" class="card-title">
+						<mat-icon
+							[svgIcon]="mernStackSkill.thirdIcon"
+							[ngStyle]="{ 'background-color': mernStackSkill.thirdBgrColor }"
+						></mat-icon>
+						<h3>
+							{{ mernStackSkill.thirdTitle }}
+						</h3>
+						<mat-radio-button
+							[value]="mernStackSkill.thirdTitle"
+							[(ngModel)]="selectedValue"
+						></mat-radio-button>
+					</div>
+				</div>
+				<mat-card-actions>
+					<p>Schedule:</p>
+					<button
+						mat-button
+						(mouseenter)="onButtonMouseEnter(i, 'verbal')"
+						(mouseleave)="onButtonMouseLeave(i, 'verbal')"
+					>
+						<span class="button-text" *ngIf="!hoverFlags[i]?.['verbal']"
+							>Video ITSA</span
+						>
+						<span class="hover-text" *ngIf="hoverFlags[i]?.['verbal']"
+							>Select</span
+						>
+					</button>
+					<button
+						mat-button
+						(mouseenter)="onButtonMouseEnter(i, 'practical')"
+						(mouseleave)="onButtonMouseLeave(i, 'practical')"
+					>
+						<span class="button-text" *ngIf="!hoverFlags[i]?.['practical']"
+							>Interview PREP</span
+						>
+						<span class="hover-text" *ngIf="hoverFlags[i]?.['practical']"
+							>Select</span
+						>
+					</button>
+				</mat-card-actions>
+			</mat-card>
+		</div>
+	</div>
+
 	<div class="heading">
 		<h2>Backend Development</h2>
 	</div>
 	<div class="carousel-container">
-		<button mat-icon-button class="arrow left" (click)="scroll(-1, 1)">
+		<button mat-icon-button class="arrow left" (click)="scroll(-1, 3)">
 			<mat-icon>chevron_left</mat-icon>
 		</button>
 		<div #cardsWrapper class="cards-wrapper">
@@ -149,8 +303,10 @@
 				</mat-card-actions>
 			</mat-card>
 		</div>
-		<button mat-icon-button class="arrow right" (click)="scroll(1, 1)">
+		<button mat-icon-button class="arrow right" (click)="scroll(1, 3)">
 			<mat-icon>chevron_right</mat-icon>
 		</button>
 	</div>
+
+
 </div>

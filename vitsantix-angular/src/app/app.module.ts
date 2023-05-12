@@ -150,5 +150,9 @@ export class AppModule {
 			"php",
 			this.domSanitizer.bypassSecurityTrustResourceUrl("assets/icons/php.svg")
 		);
+		this.matIconRegistry.addSvgIcon(
+			"mongodb",
+			this.domSanitizer.bypassSecurityTrustResourceUrl("assets/icons/mongodb.svg")
+		);
 	}
 }
