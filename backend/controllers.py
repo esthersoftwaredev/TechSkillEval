@@ -39,7 +39,11 @@ def login():
 def profile():
     return jsonify(username=current_user.username, email=current_user.email)
 
-
+@login_required
+def get_users():
+    users = User.query.all()
+    user_list = [{'username': user.username, 'email': user.email} for user in users]
+    return jsonify(users=user_list)
 
 def get_fe_assessments():
     assessments = Assessment.query.filter_by(category='frontend').all()

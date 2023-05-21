@@ -2,7 +2,7 @@ from flask import Flask
 from flask_cors import CORS
 from extensions import db, login_manager
 from models import User
-from routes import user_routes
+from routes import user_routes, assessment_routes
 
 def create_app():
     app = Flask(__name__)
@@ -15,6 +15,7 @@ def create_app():
 
     with app.app_context():
         app.register_blueprint(user_routes)
+        app.register_blueprint(assessment_routes)
 
         @login_manager.user_loader
         def load_user(user_id):
