@@ -1,5 +1,7 @@
 import { Component } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { MatSnackBar } from "@angular/material/snack-bar";
+import { UserService } from "src/app/services/user.service";
 
 @Component({
 	selector: "app-join",
@@ -9,7 +11,11 @@ import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 export class JoinComponent {
 	signUpForm: FormGroup;
 
-	constructor(private formBuilder: FormBuilder) {
+	constructor(
+		private formBuilder: FormBuilder,
+		private userService: UserService,
+		private snackBar: MatSnackBar
+	) {
 		this.signUpForm = this.formBuilder.group(
 			{
 				fullName: ["", Validators.required],
@@ -39,13 +45,28 @@ export class JoinComponent {
 		return this.signUpForm.get("confirmPassword");
 	}
 
-	onSignUpSubmit() {
-		if (this.signUpForm.valid) {
-			console.log("Form Submitted!", this.signUpForm.value);
-		} else {
-			console.log("Invalid Form");
-		}
-	}
+  onSignUpSubmit() {
+    if (this.signUpForm.valid) {
+      const formData = {
+        username: this.fullName?.value,
+        email: this.email?.value,
+        password: this.password?.value
+      };
+
+      this.userService.register(formData).subscribe(
+        (response) => {
+          console.log('Sign-up successful!', response);
+          // Handle successful sign-up response here
+        },
+        (error) => {
+          console.log('Sign-up failed!', error);
+          // Handle sign-up error here
+        }
+      );
+    } else {
+      console.log('Invalid Form');
+    }
+  }
 
 	mustMatch(controlName: string, matchingControlName: string) {
 		return (formGroup: FormGroup) => {

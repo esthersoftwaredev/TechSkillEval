@@ -1,12 +1,12 @@
 from extensions import db
-from models import Assessment, Option
+from models import User,Assessment, Option
 from app import create_app
 
 app = create_app()
 
 def populate_database():
 
-    categories = ["frontend", "mean", "mern", "backend", "fullstack"]
+    categories = ["users","frontend", "mean", "mern", "backend", "fullstack"]
 
     for category in categories:
         # Delete existing records for this category
@@ -14,7 +14,16 @@ def populate_database():
         Option.query.filter_by(category=category).delete()
         db.session.commit()
 
-        if category == "frontend":
+        if category == "users":
+            User.query.delete()  # Truncate the user table
+
+            elona = User(username="elonamuskina", email="elonamuskina@gmail.com", password_hash="elona", category="users")
+            chuck = User(username="chucknorris", email="chuck@norris.com", password_hash="chuck", category="users")
+
+            db.session.add_all([elona, chuck])
+            db.session.commit()
+
+        elif category == "frontend":
             # Create frontend-assessments
             html5 = Assessment(icon="html5", bgrColor="#f38942", title="HTML", category="frontend")
             css3 = Assessment(icon="css3", bgrColor="#349edc", title="CSS", hasOptions=True, category="frontend")

@@ -7,11 +7,12 @@ from routes import user_routes, assessment_routes
 def create_app():
     app = Flask(__name__)
     CORS(app)
+    app.config['SECRET_KEY'] = '161865b34302a09e2078ac2bdd92da02'
     app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///my_database.db'
 
     db.init_app(app)
     login_manager.init_app(app)
-    login_manager.login_view = 'users.login'  # Specifies the route for login (if you have it)
+    # login_manager.login_view = 'users.login'  # Specifies the route for login (if you have it)
 
     with app.app_context():
         app.register_blueprint(user_routes)
