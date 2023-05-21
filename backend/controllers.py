@@ -1,6 +1,45 @@
 from app import db
 from models import User, Assessment
-from flask import jsonify
+from flask import request, jsonify
+from flask_login import login_user, login_required, current_user
+
+def register():
+    data = request.get_json()
+    username = data.get('username')
+    email = data.get('email')
+    password = data.get('password')
+
+    user = User.query.filter_by(username=username).first()
+
+    if user:
+        return jsonify(message='Username already exists'), 409
+
+    new_user = User(username=username, email=email)
+    new_user.set_password(password)
+    db.session.add(new_user)
+    db.session.commit()
+
+    return jsonify(message='User created'), 201
+
+def login():
+    data = request.get_json()
+    username = data.get('username')
+    password = data.get('password')
+
+    user = User.query.filter_by(username=username).first()
+
+    if user and user.check_password(password):
+        login_user(user)
+        return jsonify(message='Logged in'), 200
+    else:
+        return jsonify(message='Invalid username or password'), 400
+
+
+@login_required
+def profile():
+    return jsonify(username=current_user.username, email=current_user.email)
+
+
 
 def get_fe_assessments():
     assessments = Assessment.query.filter_by(category='frontend').all()
