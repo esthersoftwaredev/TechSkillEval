@@ -32,7 +32,6 @@ export class AssessmentsComponent implements OnInit {
 	}
 
 
-
 	// frontendSkills: Assessment[] = [
   //   { icon: "html5", bgrColor: "#f38942", title: "HTML" },
   //   {

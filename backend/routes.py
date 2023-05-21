@@ -5,7 +5,7 @@ from controllers import get_assessments, get_assessment
 def index():
     return 'Hello, Flask! by Esther White'
 
-@app.route('/assessments', methods=['GET'])
+@app.route('/frontend-assessments', methods=['GET'])
 def get_all_assessments():
     return get_assessments()
 
