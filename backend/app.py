@@ -1,22 +1,31 @@
 from flask import Flask
 from flask_cors import CORS
-from flask_sqlalchemy import SQLAlchemy
-from flask_login import LoginManager
+from extensions import db, login_manager
 
-app = Flask(__name__)
-CORS(app)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///my_database.db'  # You can choose a different location
-db = SQLAlchemy(app)
-login_manager = LoginManager(app)
+def create_app():
+    app = Flask(__name__)
+    CORS(app)
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///my_database.db'
 
-login_manager = LoginManager(app)
-login_manager.login_view = 'login' 
+    db.init_app(app)
+    login_manager.init_app(app)
+    login_manager.login_view = 'login'  # Specifies the route for login (if you have it)
 
-# Import the routes after initializing the Flask app
-from routes import *
+    with app.app_context():
+        # Import the routes after initializing extensions
+        from models import User  # Import models here, after initializing db
+        from routes import user_routes  # Import routes here
 
-with app.app_context():
-    db.create_all()
+        app.register_blueprint(user_routes)
+
+        @login_manager.user_loader
+        def load_user(user_id):
+            return User.query.get(int(user_id))
+        
+        db.create_all()
+
+    return app
 
 if __name__ == "__main__":
+    app = create_app()
     app.run(debug=True)

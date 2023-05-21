@@ -1,5 +1,8 @@
-from app import app, db
+from extensions import db
 from models import Assessment, Option
+from app import create_app
+
+app = create_app()
 
 def populate_database():
 

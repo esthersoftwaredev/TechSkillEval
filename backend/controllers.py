@@ -1,4 +1,4 @@
-from app import db
+from extensions import db
 from models import User, Assessment
 from flask import request, jsonify
 from flask_login import login_user, login_required, current_user
