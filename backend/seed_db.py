@@ -78,7 +78,7 @@ def populate_database():
             python_option = Option(icon="python", bgrColor="#356895", title="Python", assessment=node, category="backend")
             java_option = Option(icon="java", bgrColor="#131f3f", title="Java", assessment=node, category="backend")
             go_option = Option(icon="go", bgrColor="#67d7e1", title="Go", assessment=node, category="backend")
-            csharp_option = Option(icon="csharp", bgrColor="#67d7e1", title="C#", assessment=node, category="backend")
+            csharp_option = Option(icon="csharp", bgrColor="#92458c", title="C#", assessment=node, category="backend")
             ruby_option = Option(icon="ruby", bgrColor="#eb5745", title="Ruby", assessment=php, category="backend")
             cplusplus_option = Option(icon="cplusplus", bgrColor="#659bd3", title="C++", assessment=php, category="backend")
             dotnet_option = Option(icon="dot-net", bgrColor="#6d409d", title=".NET", assessment=django, category="backend")
