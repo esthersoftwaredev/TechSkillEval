@@ -14,6 +14,7 @@ import { AssessmentsComponent } from "./components/assessments/assessments.compo
 import { AboutComponent } from "./components/about/about.component";
 import { FqaComponent } from './components/fqa/fqa.component';
 import { LoginComponent } from './components/login/login.component';
+import { JoinComponent } from './components/join/join.component';
 
 import { MatToolbarModule } from "@angular/material/toolbar";
 import { MatExpansionModule } from '@angular/material/expansion';
@@ -27,7 +28,6 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
-import { JoinComponent } from './components/join/join.component';
 
 
 @NgModule({
