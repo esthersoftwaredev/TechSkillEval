@@ -8,7 +8,7 @@ import { Assessment } from '../models/assessment';
 })
 export class AssessmentService {
 
-  private apiUrl = 'http://localhost:5000';  // Flask server URL
+  private apiUrl = 'https://python-flask-vitsantix.onrender.com/';  // Deployed Flask server URL
 
   constructor(private http: HttpClient) { }
 
