@@ -7,6 +7,7 @@ import {
 } from "@angular/core";
 import { FormBuilder, FormGroup } from "@angular/forms";
 import { Assessment } from "src/app/models/assessment";
+import { AssessmentService } from "src/app/services/assessment.service";
 
 @Component({
 	selector: "app-assessments",
@@ -17,56 +18,63 @@ export class AssessmentsComponent implements OnInit {
 	hoverFlags: { [key: string]: { [key: string]: boolean } } = {};
 	form!: FormGroup;
 
-	constructor(private formBuilder: FormBuilder) {}
+  frontendSkills: Assessment[] = [];
+
+	constructor(private formBuilder: FormBuilder, private assessmentService: AssessmentService) {}
 
 	ngOnInit(): void {
 		this.form = this.formBuilder.group({
 			selectedValue: null,
 		});
+    this.assessmentService.getAssessments().subscribe(data => {
+      this.frontendSkills = data;
+    });
 	}
 
-	frontendSkills: Assessment[] = [
-    { icon: "html5", bgrColor: "#f38942", title: "HTML" },
-    {
-      icon: "css3",
-      bgrColor: "#349edc",
-      title: "CSS",
-      hasOptions: true,
-      options: [
-        { icon: "sass", bgrColor: "#cf649a", title: "SCSS" }
-      ],
-    },
-    {
-      icon: "bootstrap",
-      bgrColor: "#513a75",
-      title: "Bootstrap",
-      hasOptions: true,
-      options: [
-        { icon: "tailwindcss", bgrColor: "#19b3ba", title: "Tailwind CSS" }
-      ],
-    },
-    { icon: "jquery", bgrColor: "#193556", title: "jQuery" },
-    {
-      icon: "javascript",
-      bgrColor: "#f0c022",
-      title: "JavaScript",
-      hasOptions: true,
-      options: [
-        { icon: "typescript", bgrColor: "#2f74c0", title: "TypeScript" }
-      ],
-    },
-    {
-      icon: "angular",
-      bgrColor: "#de0031",
-      title: "Angular",
-      hasOptions: true,
-      options: [
-        { icon: "react", bgrColor: "#4cbad8", title: "React" },
-        { icon: "vue", bgrColor: "#41b883", title: "Vue" },
-        { icon: "svelte", bgrColor: "#ff3e00", title: "Svelte" },
-      ],
-    },
-  ];
+
+
+	// frontendSkills: Assessment[] = [
+  //   { icon: "html5", bgrColor: "#f38942", title: "HTML" },
+  //   {
+  //     icon: "css3",
+  //     bgrColor: "#349edc",
+  //     title: "CSS",
+  //     hasOptions: true,
+  //     options: [
+  //       { icon: "sass", bgrColor: "#cf649a", title: "SCSS" }
+  //     ],
+  //   },
+  //   {
+  //     icon: "bootstrap",
+  //     bgrColor: "#513a75",
+  //     title: "Bootstrap",
+  //     hasOptions: true,
+  //     options: [
+  //       { icon: "tailwindcss", bgrColor: "#19b3ba", title: "Tailwind CSS" }
+  //     ],
+  //   },
+  //   { icon: "jquery", bgrColor: "#193556", title: "jQuery" },
+  //   {
+  //     icon: "javascript",
+  //     bgrColor: "#f0c022",
+  //     title: "JavaScript",
+  //     hasOptions: true,
+  //     options: [
+  //       { icon: "typescript", bgrColor: "#2f74c0", title: "TypeScript" }
+  //     ],
+  //   },
+  //   {
+  //     icon: "angular",
+  //     bgrColor: "#de0031",
+  //     title: "Angular",
+  //     hasOptions: true,
+  //     options: [
+  //       { icon: "react", bgrColor: "#4cbad8", title: "React" },
+  //       { icon: "vue", bgrColor: "#41b883", title: "Vue" },
+  //       { icon: "svelte", bgrColor: "#ff3e00", title: "Svelte" },
+  //     ],
+  //   },
+  // ];
 
   meanStackSkills: Assessment[] = [
     { icon: "html5", bgrColor: "#f38942", title: "HTML" },
