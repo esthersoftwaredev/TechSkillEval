@@ -238,44 +238,44 @@
 
 				<mat-card-actions>
 					<p>Schedule:</p>
-          <button
-          mat-button
-          (mouseenter)="onButtonMouseEnter(i, 'verbal', 'mernStackSkills')"
-          (mouseleave)="onButtonMouseLeave(i, 'verbal', 'mernStackSkills')"
-        >
-          <span
-            class="button-text"
-            *ngIf="!hoverFlags['mernStackSkills-' + i + '-verbal']"
-            >Video ITSA</span
-          >
-          <span
-            class="hover-text"
-            *ngIf="hoverFlags['mernStackSkills-' + i + '-verbal']"
-            >Select</span
-          >
-        </button>
-        <button
-          mat-button
-          (mouseenter)="onButtonMouseEnter(i, 'practical', 'mernStackSkills')"
-          (mouseleave)="onButtonMouseLeave(i, 'practical', 'mernStackSkills')"
-        >
-          <span
-            class="button-text"
-            *ngIf="!hoverFlags['mernStackSkills-' + i + '-practical']"
-            >Interview Prep</span
-          >
-          <span
-            class="hover-text"
-            *ngIf="hoverFlags['mernStackSkills-' + i + '-practical']"
-            >Select</span
-          >
-        </button>
+					<button
+						mat-button
+						(mouseenter)="onButtonMouseEnter(i, 'verbal', 'mernStackSkills')"
+						(mouseleave)="onButtonMouseLeave(i, 'verbal', 'mernStackSkills')"
+					>
+						<span
+							class="button-text"
+							*ngIf="!hoverFlags['mernStackSkills-' + i + '-verbal']"
+							>Video ITSA</span
+						>
+						<span
+							class="hover-text"
+							*ngIf="hoverFlags['mernStackSkills-' + i + '-verbal']"
+							>Select</span
+						>
+					</button>
+					<button
+						mat-button
+						(mouseenter)="onButtonMouseEnter(i, 'practical', 'mernStackSkills')"
+						(mouseleave)="onButtonMouseLeave(i, 'practical', 'mernStackSkills')"
+					>
+						<span
+							class="button-text"
+							*ngIf="!hoverFlags['mernStackSkills-' + i + '-practical']"
+							>Interview Prep</span
+						>
+						<span
+							class="hover-text"
+							*ngIf="hoverFlags['mernStackSkills-' + i + '-practical']"
+							>Select</span
+						>
+					</button>
 				</mat-card-actions>
 			</mat-card>
 		</div>
 	</div>
 
-  <div class="heading">
+	<div class="heading">
 		<h2>Backend Development Specialization</h2>
 	</div>
 	<div class="carousel-container">
@@ -332,38 +332,38 @@
 
 				<mat-card-actions>
 					<p>Schedule:</p>
-          <button
-          mat-button
-          (mouseenter)="onButtonMouseEnter(i, 'verbal', 'mernStackSkills')"
-          (mouseleave)="onButtonMouseLeave(i, 'verbal', 'mernStackSkills')"
-        >
-          <span
-            class="button-text"
-            *ngIf="!hoverFlags['mernStackSkills-' + i + '-verbal']"
-            >Video ITSA</span
-          >
-          <span
-            class="hover-text"
-            *ngIf="hoverFlags['mernStackSkills-' + i + '-verbal']"
-            >Select</span
-          >
-        </button>
-        <button
-          mat-button
-          (mouseenter)="onButtonMouseEnter(i, 'practical', 'backendSkills')"
-          (mouseleave)="onButtonMouseLeave(i, 'practical', 'backendSkills')"
-        >
-          <span
-            class="button-text"
-            *ngIf="!hoverFlags['backendSkills-' + i + '-practical']"
-            >Interview Prep</span
-          >
-          <span
-            class="hover-text"
-            *ngIf="hoverFlags['backendSkills-' + i + '-practical']"
-            >Select</span
-          >
-        </button>
+					<button
+						mat-button
+						(mouseenter)="onButtonMouseEnter(i, 'verbal', 'mernStackSkills')"
+						(mouseleave)="onButtonMouseLeave(i, 'verbal', 'mernStackSkills')"
+					>
+						<span
+							class="button-text"
+							*ngIf="!hoverFlags['mernStackSkills-' + i + '-verbal']"
+							>Video ITSA</span
+						>
+						<span
+							class="hover-text"
+							*ngIf="hoverFlags['mernStackSkills-' + i + '-verbal']"
+							>Select</span
+						>
+					</button>
+					<button
+						mat-button
+						(mouseenter)="onButtonMouseEnter(i, 'practical', 'backendSkills')"
+						(mouseleave)="onButtonMouseLeave(i, 'practical', 'backendSkills')"
+					>
+						<span
+							class="button-text"
+							*ngIf="!hoverFlags['backendSkills-' + i + '-practical']"
+							>Interview Prep</span
+						>
+						<span
+							class="hover-text"
+							*ngIf="hoverFlags['backendSkills-' + i + '-practical']"
+							>Select</span
+						>
+					</button>
 				</mat-card-actions>
 			</mat-card>
 		</div>
@@ -372,38 +372,52 @@
 		</button>
 	</div>
 
-  <div class="heading">
+	<div class="heading">
 		<h2>FullStack Development Specialization</h2>
 	</div>
 	<div class="carousel-container">
-		<button mat-icon-button class="arrow left" (click)="scroll(-1, 3)">
+		<button mat-icon-button class="arrow left" (click)="scroll(-1, 4)">
 			<mat-icon>chevron_left</mat-icon>
 		</button>
 		<div #cardsWrapper class="cards-wrapper">
-			<mat-card *ngFor="let backendSkill of backendSkills; let i = index">
+			<mat-card *ngFor="let fullStackSkill of fullStackSkills; let i = index">
 				<div class="card-header">
-					<ng-container *ngIf="backendSkill.hasOptions; else normalCardTitle">
+					<ng-container *ngIf="fullStackSkill.hasOptions; else normalCardTitle">
 						<form [formGroup]="form">
 							<mat-form-field appearance="fill">
-								<mat-label *ngIf="backendSkill.title === 'NodeJS'"
+								<mat-label *ngIf="fullStackSkill.title === 'CSS'"
+									>CSS / SCSS</mat-label
+								>
+								<mat-label *ngIf="fullStackSkill.title === 'Bootstrap'"
+									>CSS Framework</mat-label
+								>
+								<mat-label *ngIf="fullStackSkill.title === 'JavaScript'"
+									>JavaScript / TypeScript</mat-label
+								>
+								<mat-label *ngIf="fullStackSkill.title === 'Angular'"
+									>JS Framework</mat-label
+								>
+								<mat-label *ngIf="fullStackSkill.title === 'NodeJS'"
 									>Backend Language</mat-label
 								>
-								<mat-label *ngIf="backendSkill.title === 'PHP'"
+								<mat-label *ngIf="fullStackSkill.title === 'PHP'"
 									>Optional Backend Language</mat-label
 								>
-								<mat-label *ngIf="backendSkill.title === 'Django'"
+								<mat-label *ngIf="fullStackSkill.title === 'Django'"
 									>Backend Framework</mat-label
 								>
 								<mat-select formControlName="selectedValue">
-									<mat-option [value]="backendSkill.title">
+									<mat-option [value]="fullStackSkill.title">
 										<mat-icon
-											[svgIcon]="backendSkill.icon"
-											[ngStyle]="{ 'background-color': backendSkill.bgrColor }"
+											[svgIcon]="fullStackSkill.icon"
+											[ngStyle]="{
+												'background-color': fullStackSkill.bgrColor
+											}"
 										></mat-icon>
-										{{ backendSkill.title }}
+										{{ fullStackSkill.title }}
 									</mat-option>
 									<mat-option
-										*ngFor="let option of backendSkill.options"
+										*ngFor="let option of fullStackSkill.options"
 										[value]="option.title"
 									>
 										<mat-icon
@@ -419,52 +433,52 @@
 					<ng-template #normalCardTitle>
 						<div class="card-title">
 							<mat-icon
-								[svgIcon]="backendSkill.icon"
-								[ngStyle]="{ 'background-color': backendSkill.bgrColor }"
+								[svgIcon]="fullStackSkill.icon"
+								[ngStyle]="{ 'background-color': fullStackSkill.bgrColor }"
 							></mat-icon>
-							<h3>{{ backendSkill.title }}</h3>
+							<h3>{{ fullStackSkill.title }}</h3>
 						</div>
 					</ng-template>
 				</div>
 
 				<mat-card-actions>
 					<p>Schedule:</p>
-          <button
-          mat-button
-          (mouseenter)="onButtonMouseEnter(i, 'verbal', 'mernStackSkills')"
-          (mouseleave)="onButtonMouseLeave(i, 'verbal', 'mernStackSkills')"
-        >
-          <span
-            class="button-text"
-            *ngIf="!hoverFlags['mernStackSkills-' + i + '-verbal']"
-            >Video ITSA</span
-          >
-          <span
-            class="hover-text"
-            *ngIf="hoverFlags['mernStackSkills-' + i + '-verbal']"
-            >Select</span
-          >
-        </button>
-        <button
-          mat-button
-          (mouseenter)="onButtonMouseEnter(i, 'practical', 'backendSkills')"
-          (mouseleave)="onButtonMouseLeave(i, 'practical', 'backendSkills')"
-        >
-          <span
-            class="button-text"
-            *ngIf="!hoverFlags['backendSkills-' + i + '-practical']"
-            >Interview Prep</span
-          >
-          <span
-            class="hover-text"
-            *ngIf="hoverFlags['backendSkills-' + i + '-practical']"
-            >Select</span
-          >
-        </button>
+					<button
+						mat-button
+						(mouseenter)="onButtonMouseEnter(i, 'verbal', 'mernStackSkills')"
+						(mouseleave)="onButtonMouseLeave(i, 'verbal', 'mernStackSkills')"
+					>
+						<span
+							class="button-text"
+							*ngIf="!hoverFlags['mernStackSkills-' + i + '-verbal']"
+							>Video ITSA</span
+						>
+						<span
+							class="hover-text"
+							*ngIf="hoverFlags['mernStackSkills-' + i + '-verbal']"
+							>Select</span
+						>
+					</button>
+					<button
+						mat-button
+						(mouseenter)="onButtonMouseEnter(i, 'practical', 'backendSkills')"
+						(mouseleave)="onButtonMouseLeave(i, 'practical', 'backendSkills')"
+					>
+						<span
+							class="button-text"
+							*ngIf="!hoverFlags['backendSkills-' + i + '-practical']"
+							>Interview Prep</span
+						>
+						<span
+							class="hover-text"
+							*ngIf="hoverFlags['backendSkills-' + i + '-practical']"
+							>Select</span
+						>
+					</button>
 				</mat-card-actions>
 			</mat-card>
 		</div>
-		<button mat-icon-button class="arrow right" (click)="scroll(1, 3)">
+		<button mat-icon-button class="arrow right" (click)="scroll(1, 4)">
 			<mat-icon>chevron_right</mat-icon>
 		</button>
 	</div>
