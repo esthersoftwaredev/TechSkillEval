@@ -6,7 +6,7 @@ app = create_app()
 
 def populate_database():
 
-    categories = ["user","frontend", "mean", "mern", "backend", "fullstack"]
+    categories = ["frontend", "mean", "mern", "backend", "fullstack"]
 
     for category in categories:
         # Delete existing records for this category
