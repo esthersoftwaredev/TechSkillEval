@@ -1,15 +1,19 @@
 from app import db
 from models import User, Assessment
 from flask import jsonify
+
 def get_fe_assessments():
     assessments = Assessment.query.filter_by(category='frontend').all()
     return jsonify([assessment.serialize() for assessment in assessments])
+
 def get_mean_assessments():
     assessments = Assessment.query.filter_by(category='mean').all()
     return jsonify([assessment.serialize() for assessment in assessments])
+
 def get_mern_assessments():
     assessments = Assessment.query.filter_by(category='mern').all()
     return jsonify([assessment.serialize() for assessment in assessments])
+
 def get_backend_assessments():
     assessments = Assessment.query.filter_by(category='backend').all()
     return jsonify([assessment.serialize() for assessment in assessments])

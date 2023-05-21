@@ -1,8 +1,5 @@
-from extensions import db
-from models import User,Assessment, Option
-from app import create_app
-
-app = create_app()
+from app import app, db
+from models import Assessment, Option
 
 def populate_database():
 
@@ -126,4 +123,3 @@ def populate_database():
 if __name__ == "__main__":
     with app.app_context():
         populate_database()
-
