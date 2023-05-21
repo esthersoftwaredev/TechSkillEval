@@ -14,16 +14,7 @@ def populate_database():
         Option.query.filter_by(category=category).delete()
         db.session.commit()
 
-        if category == "users":
-            User.query.delete()  # Truncate the user table
-
-            elona = User(username="elonamuskina", email="elonamuskina@gmail.com", password_hash="elona", category="user")
-            chuck = User(username="chucknorris", email="chuck@norris.com", password_hash="chuck", category="user")
-
-            db.session.add_all([elona, chuck])
-            db.session.commit()
-
-        elif category == "frontend":
+        if category == "frontend":
             # Create frontend-assessments
             html5 = Assessment(icon="html5", bgrColor="#f38942", title="HTML", category="frontend")
             css3 = Assessment(icon="css3", bgrColor="#349edc", title="CSS", hasOptions=True, category="frontend")

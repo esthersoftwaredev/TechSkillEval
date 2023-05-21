@@ -19,6 +19,20 @@
 			</mat-form-field>
 
 			<mat-form-field appearance="fill">
+				<mat-label>Username</mat-label>
+				<input
+					matInput
+					formControlName="username"
+					type="text"
+					placeholder="Enter a username"
+					required
+				/>
+				<mat-error *ngIf="username?.invalid && username?.touched">
+					Please a username
+				</mat-error>
+			</mat-form-field>
+
+			<mat-form-field appearance="fill">
 				<mat-label>Email</mat-label>
 				<input
 					matInput

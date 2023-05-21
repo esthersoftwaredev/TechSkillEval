@@ -6,9 +6,11 @@ from routes import user_routes, assessment_routes
 
 def create_app():
     app = Flask(__name__)
-    CORS(app)
     app.config['SECRET_KEY'] = '161865b34302a09e2078ac2bdd92da02'
     app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///my_database.db'
+
+    # Add CORS configuration
+    CORS(app, methods=["GET", "POST", "PUT", "DELETE"], allowed_headers=["Content-Type"])
 
     db.init_app(app)
     login_manager.init_app(app)

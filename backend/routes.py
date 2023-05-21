@@ -1,6 +1,7 @@
 from flask import Blueprint
 from flask_login import login_required
 from controllers import register, login, profile, get_users, get_fe_assessments, get_mean_assessments, get_mern_assessments, get_backend_assessments, get_fullstack_assessments, get_assessment
+from flask_cors import cross_origin
 
 user_routes = Blueprint('users', __name__)
 assessment_routes = Blueprint('assessments', __name__)
@@ -10,6 +11,7 @@ def index():
     return 'Hello, Flask! by Esther White'
 
 @user_routes.route('/register', methods=['POST'])
+@cross_origin()
 def register_route():
     return register()
 
