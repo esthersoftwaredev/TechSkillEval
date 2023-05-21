@@ -59,6 +59,28 @@ def populate_database():
 
         db.session.commit()
 
+    if not Assessment.query.filter_by(category="backend").first():
+        # Create assessments for backend-assessments
+        node = Assessment(icon="node", bgrColor="#3b7f3a", title="NodeJS", category="backend")
+        php = Assessment(icon="php", bgrColor="#4b568c", title="PHP", hasOptions=True, category="backend")
+        django = Assessment(icon="django", bgrColor="#092e20", title="Django", hasOptions=True, category="backend")
+        mongodb = Assessment(icon="mongodb", bgrColor="#001e2b", title="MongoDB", category="backend")
+
+        db.session.add_all([node, php, django, mongodb])
+
+        # Create options for backend-assessments
+        python_option = Option(icon="python", bgrColor="#356895", title="Python", assessment=node, category="backend")
+        java_option = Option(icon="java", bgrColor="#131f3f", title="Java", assessment=node, category="backend")
+        go_option = Option(icon="go", bgrColor="#67d7e1", title="Go", assessment=node, category="backend")
+        csharp_option = Option(icon="csharp", bgrColor="#67d7e1", title="C#", assessment=node, category="backend")
+        ruby_option = Option(icon="ruby", bgrColor="#eb5745", title="Ruby", assessment=php, category="backend")
+        cplusplus_option = Option(icon="cplusplus", bgrColor="#659bd3", title="C++", assessment=php, category="backend")
+        dotnet_option = Option(icon="dot-net", bgrColor="#6d409d", title=".NET", assessment=django, category="backend")
+        
+        db.session.add_all([python_option, java_option, go_option, csharp_option, ruby_option, cplusplus_option, dotnet_option])
+
+        db.session.commit()
+
 if __name__ == "__main__":
     with app.app_context():
         populate_database()

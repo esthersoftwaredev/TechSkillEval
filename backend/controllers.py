@@ -14,6 +14,10 @@ def get_mern_assessments():
     assessments = Assessment.query.filter_by(category='mern').all()
     return jsonify([assessment.serialize() for assessment in assessments])
 
+def get_backend_assessments():
+    assessments = Assessment.query.filter_by(category='backend').all()
+    return jsonify([assessment.serialize() for assessment in assessments])
+
 def get_assessment(assessment_id):
     assessment = Assessment.query.get(assessment_id)
     if assessment:
