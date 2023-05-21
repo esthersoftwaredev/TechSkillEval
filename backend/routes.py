@@ -1,5 +1,5 @@
 from app import app, db
-from controllers import get_fe_assessments, get_mean_assessments, get_mern_assessments, get_backend_assessments, get_assessment
+from controllers import get_fe_assessments, get_mean_assessments, get_mern_assessments, get_backend_assessments, get_fullstack_assessments, get_assessment
 
 @app.route('/')
 def index():
@@ -16,6 +16,10 @@ def mean_assessments():
 @app.route('/mern-assessments', methods=['GET'])
 def mern_assessments():
     return get_mern_assessments()
+
+@app.route('/fullstack-assessments', methods=['GET'])
+def fullstack_assessments():
+    return get_fullstack_assessments()
 
 @app.route('/backend-assessments', methods=['GET'])
 def backend_assessments():

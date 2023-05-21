@@ -28,6 +28,10 @@ export class AssessmentService {
     return this.http.get<Assessment[]>(`${this.apiUrl}/backend-assessments`);
   }
 
+  getFullStackAssessments(): Observable<Assessment[]> {
+    return this.http.get<Assessment[]>(`${this.apiUrl}/fullstack-assessments`);
+  }
+
   getAssessment(id: string): Observable<Assessment> {
     return this.http.get<Assessment>(`${this.apiUrl}/assessments/${id}`);
   }

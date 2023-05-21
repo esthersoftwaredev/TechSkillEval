@@ -18,6 +18,10 @@ def get_backend_assessments():
     assessments = Assessment.query.filter_by(category='backend').all()
     return jsonify([assessment.serialize() for assessment in assessments])
 
+def get_fullstack_assessments():
+    assessments = Assessment.query.filter_by(category='fullstack').all()
+    return jsonify([assessment.serialize() for assessment in assessments])
+
 def get_assessment(assessment_id):
     assessment = Assessment.query.get(assessment_id)
     if assessment:

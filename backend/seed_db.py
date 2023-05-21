@@ -3,7 +3,7 @@ from models import Assessment, Option
 
 def populate_database():
 
-    categories = ["frontend", "mean", "mern", "backend"]
+    categories = ["frontend", "mean", "mern", "backend", "fullstack"]
 
     for category in categories:
         # Delete existing records for this category
@@ -84,6 +84,39 @@ def populate_database():
             dotnet_option = Option(icon="dot-net", bgrColor="#6d409d", title=".NET", assessment=django, category="backend")
             
             db.session.add_all([python_option, java_option, go_option, csharp_option, ruby_option, cplusplus_option, dotnet_option])
+
+            db.session.commit()
+
+        elif category == "fullstack":
+            # Create assessments for fullstack-assessments
+            html5 = Assessment(icon="html5", bgrColor="#f38942", title="HTML", category="fullstack")
+            css3 = Assessment(icon="css3", bgrColor="#349edc", title="CSS", hasOptions=True, category="fullstack")
+            bootstrap = Assessment(icon="bootstrap", bgrColor="#513a75", title="Bootstrap", hasOptions=True, category="fullstack")
+            javascript = Assessment(icon="javascript", bgrColor="#f0c022", title="JavaScript", hasOptions=True, category="fullstack")
+            angular = Assessment(icon="angular", bgrColor="#de0031", title="Angular", hasOptions=True, category="fullstack")
+            node = Assessment(icon="node", bgrColor="#3b7f3a", title="NodeJS", hasOptions=True, category="fullstack")
+            php = Assessment(icon="php", bgrColor="#4b568c", title="PHP", hasOptions=True, category="fullstack")
+            django = Assessment(icon="django", bgrColor="#092e20", title="Django", hasOptions=True, category="fullstack")
+            mongodb = Assessment(icon="mongodb", bgrColor="#001e2b", title="MongoDB", category="fullstack")
+
+            db.session.add_all([html5, css3, bootstrap, javascript, angular, node, php, django, mongodb])
+
+            # Create options for fullstack-assessments
+            sass_option = Option(icon="sass", bgrColor="#cf649a", title="SCSS", assessment=css3, category="fullstack")
+            tailwind_option = Option(icon="tailwindcss", bgrColor="#19b3ba", title="Tailwind CSS", assessment=bootstrap, category="fullstack")
+            typescript_option = Option(icon="typescript", bgrColor="#2f74c0", title="TypeScript", assessment=javascript, category="fullstack")
+            react_option = Option(icon="react", bgrColor="#4cbad8", title="React", assessment=angular, category="fullstack")
+            vue_option = Option(icon="vue", bgrColor="#41b883", title="Vue", assessment=angular, category="fullstack")
+            svelte_option = Option(icon="svelte", bgrColor="#ff3e00", title="Svelte", assessment=angular, category="fullstack")
+            python_option = Option(icon="python", bgrColor="#356895", title="Python", assessment=node, category="fullstack")
+            java_option = Option(icon="java", bgrColor="#131f3f", title="Java", assessment=node, category="fullstack")
+            go_option = Option(icon="go", bgrColor="#67d7e1", title="Go", assessment=node, category="fullstack")
+            csharp_option = Option(icon="csharp", bgrColor="#92458c", title="C#", assessment=node, category="fullstack")
+            ruby_option = Option(icon="ruby", bgrColor="#eb5745", title="Ruby", assessment=php, category="fullstack")
+            cplusplus_option = Option(icon="cplusplus", bgrColor="#659bd3", title="C++", assessment=php, category="fullstack")
+            dotnet_option = Option(icon="dot-net", bgrColor="#6d409d", title=".NET", assessment=django, category="fullstack")
+            
+            db.session.add_all([sass_option, tailwind_option, typescript_option, react_option, vue_option, svelte_option,python_option, java_option, go_option, csharp_option, ruby_option, cplusplus_option, dotnet_option])
 
             db.session.commit()
 

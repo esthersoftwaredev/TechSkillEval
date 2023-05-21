@@ -22,6 +22,7 @@ export class AssessmentsComponent implements OnInit {
 	meanStackSkills: Assessment[] = [];
 	mernStackSkills: Assessment[] = [];
 	backendSkills: Assessment[] = [];
+	fullStackSkills: Assessment[] = [];
 
 	constructor(
 		private formBuilder: FormBuilder,
@@ -44,21 +45,10 @@ export class AssessmentsComponent implements OnInit {
 		this.assessmentService.getBackendAssessments().subscribe((data) => {
 			this.backendSkills = data;
 		});
+		this.assessmentService.getFullStackAssessments().subscribe((data) => {
+			this.fullStackSkills = data;
+		});
 	}
-
-
-	// fullstackSkills: Assessment[] = [
-	// 	{ icon: "node", bgrColor: "#3b7f3a", title: "nodeJS" },
-	// 	{ icon: "python", bgrColor: "#356895", title: "Python" },
-	// 	{ icon: "django", bgrColor: "#092e20", title: "Django" },
-	// 	{ icon: "java", bgrColor: "#131f3f", title: "Java" },
-	// 	{ icon: "go", bgrColor: "#67d7e1", title: "Go" },
-	// 	{ icon: "csharp", bgrColor: "#92458c", title: "C#" },
-	// 	{ icon: "cplusplus", bgrColor: "#659bd3", title: "C++" },
-	// 	{ icon: "dot-net", bgrColor: "#6d409d", title: ".NET" },
-	// 	{ icon: "php", bgrColor: "#4b568c", title: "PHP" },
-	// 	{ icon: "ruby", bgrColor: "#eb5745", title: "Ruby" },
-	// ];
 
 	@ViewChildren("cardsWrapper", { read: ElementRef })
 	cardsWrappers!: QueryList<ElementRef>;
