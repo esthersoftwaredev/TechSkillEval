@@ -3,11 +3,11 @@ from models import User, Assessment
 from flask import jsonify
 
 def get_fe_assessments():
-    assessments = Assessment.query.all()
+    assessments = Assessment.query.filter_by(category='frontend').all()
     return jsonify([assessment.serialize() for assessment in assessments])
 
 def get_mean_assessments():
-    assessments = Assessment.query.all()
+    assessments = Assessment.query.filter_by(category='mean').all()
     return jsonify([assessment.serialize() for assessment in assessments])
 
 def get_assessment(assessment_id):

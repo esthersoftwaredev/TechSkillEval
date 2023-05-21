@@ -13,6 +13,8 @@ class Assessment(db.Model):
     bgrColor = db.Column(db.String(64))
     title = db.Column(db.String(64))
     hasOptions = db.Column(db.Boolean, default=False)
+    category = db.Column(db.String(64))
+
     options = db.relationship('Option', backref='assessment', lazy=True)
 
     def serialize(self):
@@ -22,6 +24,7 @@ class Assessment(db.Model):
             'bgrColor': self.bgrColor,
             'title': self.title,
             'hasOptions': self.hasOptions,
+            'category': self.category,
             'options': [option.serialize() for option in self.options]
         }
 
@@ -31,6 +34,7 @@ class Option(db.Model):
     icon = db.Column(db.String(64))
     bgrColor = db.Column(db.String(64))
     title = db.Column(db.String(64))
+    category = db.Column(db.String(64))
     assessment_id = db.Column(db.Integer, db.ForeignKey('assessment.id'))
 
     def serialize(self):
@@ -38,6 +42,7 @@ class Option(db.Model):
             'id': self.id,
             'icon': self.icon,
             'bgrColor': self.bgrColor,
-            'title': self.title
+            'title': self.title,
+            'category': self.category
         }    
 
