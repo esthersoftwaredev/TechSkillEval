@@ -10,6 +10,10 @@ def get_mean_assessments():
     assessments = Assessment.query.filter_by(category='mean').all()
     return jsonify([assessment.serialize() for assessment in assessments])
 
+def get_mern_assessments():
+    assessments = Assessment.query.filter_by(category='mern').all()
+    return jsonify([assessment.serialize() for assessment in assessments])
+
 def get_assessment(assessment_id):
     assessment = Assessment.query.get(assessment_id)
     if assessment:

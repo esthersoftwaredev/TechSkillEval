@@ -20,6 +20,10 @@ export class AssessmentService {
     return this.http.get<Assessment[]>(`${this.apiUrl}/mean-assessments`);
   }
 
+  getMernAssessments(): Observable<Assessment[]> {
+    return this.http.get<Assessment[]>(`${this.apiUrl}/mern-assessments`);
+  }
+
   getAssessment(id: string): Observable<Assessment> {
     return this.http.get<Assessment>(`${this.apiUrl}/assessments/${id}`);
   }

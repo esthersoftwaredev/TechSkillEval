@@ -20,6 +20,7 @@ export class AssessmentsComponent implements OnInit {
 
 	frontendSkills: Assessment[] = [];
 	meanStackSkills: Assessment[] = [];
+	mernStackSkills: Assessment[] = [];
 
 	constructor(
 		private formBuilder: FormBuilder,
@@ -36,25 +37,28 @@ export class AssessmentsComponent implements OnInit {
 		this.assessmentService.getMeanAssessments().subscribe((data) => {
 			this.meanStackSkills = data;
 		});
+		this.assessmentService.getMernAssessments().subscribe((data) => {
+			this.mernStackSkills = data;
+		});
 	}
 
-	mernStackSkills: Assessment[] = [
-		{ icon: "html5", bgrColor: "#f38942", title: "HTML" },
-		{
-			icon: "css3",
-			bgrColor: "#349edc",
-			title: "CSS",
-			hasOptions: true,
-			options: [{ icon: "sass", bgrColor: "#cf649a", title: "SCSS" }],
-		},
-		{
-			icon: "react",
-			bgrColor: "#4cbad8",
-			title: "React",
-		},
-		{ icon: "node", bgrColor: "#3b7f3a", title: "nodeJS" },
-		{ icon: "mongodb", bgrColor: "#001e2b", title: "MongoDB" },
-	];
+	// mernStackSkills: Assessment[] = [
+	// 	{ icon: "html5", bgrColor: "#f38942", title: "HTML" },
+	// 	{
+	// 		icon: "css3",
+	// 		bgrColor: "#349edc",
+	// 		title: "CSS",
+	// 		hasOptions: true,
+	// 		options: [{ icon: "sass", bgrColor: "#cf649a", title: "SCSS" }],
+	// 	},
+	// 	{
+	// 		icon: "react",
+	// 		bgrColor: "#4cbad8",
+	// 		title: "React",
+	// 	},
+	// 	{ icon: "node", bgrColor: "#3b7f3a", title: "nodeJS" },
+	// 	{ icon: "mongodb", bgrColor: "#001e2b", title: "MongoDB" },
+	// ];
 
 	backendSkills: Assessment[] = [
 		{

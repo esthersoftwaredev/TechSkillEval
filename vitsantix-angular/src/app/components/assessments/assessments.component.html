@@ -188,7 +188,7 @@
 		</div>
 	</div>
 
-	<!-- <div class="heading">
+	<div class="heading">
 		<h2>MERN STACK Development Specialization</h2>
 	</div>
 	<div class="carousel-container">
@@ -238,36 +238,44 @@
 
 				<mat-card-actions>
 					<p>Schedule:</p>
-					<button
-						mat-button
-						(mouseenter)="onButtonMouseEnter(i, 'verbal')"
-						(mouseleave)="onButtonMouseLeave(i, 'verbal')"
-					>
-						<span class="button-text" *ngIf="!hoverFlags[i]?.['verbal']"
-							>Video ITSA</span
-						>
-						<span class="hover-text" *ngIf="hoverFlags[i]?.['verbal']"
-							>Select</span
-						>
-					</button>
-					<button
-						mat-button
-						(mouseenter)="onButtonMouseEnter(i, 'practical')"
-						(mouseleave)="onButtonMouseLeave(i, 'practical')"
-					>
-						<span class="button-text" *ngIf="!hoverFlags[i]?.['practical']"
-							>Interview PREP</span
-						>
-						<span class="hover-text" *ngIf="hoverFlags[i]?.['practical']"
-							>Select</span
-						>
-					</button>
+          <button
+          mat-button
+          (mouseenter)="onButtonMouseEnter(i, 'verbal', 'mernStackSkills')"
+          (mouseleave)="onButtonMouseLeave(i, 'verbal', 'mernStackSkills')"
+        >
+          <span
+            class="button-text"
+            *ngIf="!hoverFlags['mernStackSkills-' + i + '-verbal']"
+            >Video ITSA</span
+          >
+          <span
+            class="hover-text"
+            *ngIf="hoverFlags['mernStackSkills-' + i + '-verbal']"
+            >Select</span
+          >
+        </button>
+        <button
+          mat-button
+          (mouseenter)="onButtonMouseEnter(i, 'practical', 'mernStackSkills')"
+          (mouseleave)="onButtonMouseLeave(i, 'practical', 'mernStackSkills')"
+        >
+          <span
+            class="button-text"
+            *ngIf="!hoverFlags['mernStackSkills-' + i + '-practical']"
+            >Interview Prep</span
+          >
+          <span
+            class="hover-text"
+            *ngIf="hoverFlags['mernStackSkills-' + i + '-practical']"
+            >Select</span
+          >
+        </button>
 				</mat-card-actions>
 			</mat-card>
 		</div>
 	</div>
 
-	<div class="heading">
+	<!-- <div class="heading">
 		<h2>Backend Development Specialization</h2>
 	</div>
 	<div class="carousel-container">

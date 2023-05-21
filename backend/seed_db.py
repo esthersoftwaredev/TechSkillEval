@@ -2,7 +2,7 @@ from app import app, db
 from models import Assessment, Option
 
 def populate_database():
-    if not Assessment.query.first():  # Check if there are any assessments already
+    if not Assessment.query.filter_by(category="frontend").first():  # Check if there are any assessments already
         # Create frontend-assessments
         html5 = Assessment(icon="html5", bgrColor="#f38942", title="HTML", category="frontend")
         css3 = Assessment(icon="css3", bgrColor="#349edc", title="CSS", hasOptions=True, category="frontend")
@@ -23,6 +23,9 @@ def populate_database():
 
         db.session.add_all([sass_option, tailwind_option, typescript_option, react_option, vue_option, svelte_option])
 
+        db.session.commit()
+
+    if not Assessment.query.filter_by(category="mean").first():
         # Create assessments for mean-assessments
         html5 = Assessment(icon="html5", bgrColor="#f38942", title="HTML", category="mean")
         css3 = Assessment(icon="css3", bgrColor="#349edc", title="CSS", hasOptions=True, category="mean")
@@ -34,6 +37,23 @@ def populate_database():
 
         # Create options for mean-assessments
         sass_option = Option(icon="sass", bgrColor="#cf649a", title="SCSS", assessment=css3, category="mean")
+        
+        db.session.add_all([sass_option])
+
+        db.session.commit()
+
+    if not Assessment.query.filter_by(category="mern").first():
+        # Create assessments for mern-assessments
+        html5 = Assessment(icon="html5", bgrColor="#f38942", title="HTML", category="mern")
+        css3 = Assessment(icon="css3", bgrColor="#349edc", title="CSS", hasOptions=True, category="mern")
+        react = Assessment(icon="react", bgrColor="#4cbad8", title="React", category="mern")
+        node = Assessment(icon="node", bgrColor="#3b7f3a", title="NodeJS", category="mern")
+        mongodb = Assessment(icon="mongodb", bgrColor="#001e2b", title="MongoDB", category="mern")
+
+        db.session.add_all([html5, css3, react, node, mongodb])
+
+        # Create options for mern-assessments
+        sass_option = Option(icon="sass", bgrColor="#cf649a", title="SCSS", assessment=css3, category="mern")
         
         db.session.add_all([sass_option])
 
