@@ -1,18 +1,15 @@
 from app import app, db
-from controllers import get_projects, create_project, get_project
+from controllers import get_assessments, get_assessment
 
 @app.route('/')
 def index():
     return 'Hello, Flask! by Esther White'
 
-@app.route('/projects', methods=['GET'])
-def get_all_projects():
-    return get_projects()
+@app.route('/assessments', methods=['GET'])
+def get_all_assessments():
+    return get_assessments()
 
-@app.route('/projects', methods=['POST'])
-def create_new_project():
-    return create_project()
 
-@app.route('/projects/<project_id>', methods=['GET'])
-def get_single_project(project_id):
-    return get_project(project_id)
+@app.route('/assessments/<assessment_id>', methods=['GET'])
+def get_single_assessment(assessment_id):
+    return get_assessment(assessment_id)

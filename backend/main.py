@@ -1,4 +1,4 @@
 from app import app
-from controllers import get_projects, create_project, get_project
+from controllers import get_assessments, get_assessment
 
 # Rest of the code
