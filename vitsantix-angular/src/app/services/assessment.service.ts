@@ -12,8 +12,12 @@ export class AssessmentService {
 
   constructor(private http: HttpClient) { }
 
-  getAssessments(): Observable<Assessment[]> {
+  getFeAssessments(): Observable<Assessment[]> {
     return this.http.get<Assessment[]>(`${this.apiUrl}/frontend-assessments`);
+  }
+
+  getMeanAssessments(): Observable<Assessment[]> {
+    return this.http.get<Assessment[]>(`${this.apiUrl}/mean-assessments`);
   }
 
   getAssessment(id: string): Observable<Assessment> {
