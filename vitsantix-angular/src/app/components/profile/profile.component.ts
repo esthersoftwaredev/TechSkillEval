@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { UserService } from 'src/app/services/user.service';
+import { Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-profile',
@@ -7,10 +8,11 @@ import { UserService } from 'src/app/services/user.service';
   styleUrls: ['./profile.component.scss']
 })
 export class ProfileComponent {
-  constructor(private userService: UserService) {}
+  constructor(private authService: AuthService, private router: Router) {}
 
   logout(): void {
-    this.userService.logout();
+    this.authService.logout();
+    this.router.navigate(['/']);
     // Perform any additional actions after logout if needed
   }
 }

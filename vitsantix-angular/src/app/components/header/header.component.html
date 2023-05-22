@@ -1,21 +1,35 @@
 <mat-toolbar>
-  <div class="logo">
-    <a href="">
-      <img [src]="logoSrc" alt="">
-    </a>
-  </div>
-  <mat-nav-list>
-    <ng-container *ngFor="let item of navItems">
-    <a mat-list-item
-      [routerLink]="item.link"
-      routerLinkActive="active">
-      <span class="nav-text">{{ item.label }}</span>
-    </a>
-  </ng-container>
-  </mat-nav-list>
+	<div class="logo">
+		<a href="">
+			<img [src]="logoSrc" alt="" />
+		</a>
+	</div>
+	<mat-nav-list>
+		<ng-container *ngFor="let item of navItems">
+			<a mat-list-item [routerLink]="item.link" routerLinkActive="active">
+				<span class="nav-text">{{ item.label }}</span>
+			</a>
+		</ng-container>
 
-  <div class="theme-switcher">
-    <mat-slide-toggle (click)="toggleTheme()" checked></mat-slide-toggle>
-    <mat-icon>{{ isDarkTheme ? 'bedtime' : 'wb_sunny' }}</mat-icon>
-  </div>
+		<ng-container *ngIf="isLoggedIn; else loginJoinTemplate">
+			<!-- Display profile button -->
+			<a mat-list-item routerLink="/profile" routerLinkActive="active">
+				<span class="nav-text">Profile</span>
+			</a>
+		</ng-container>
+		<ng-template #loginJoinTemplate>
+			<!-- Display login and join buttons -->
+			<a mat-list-item routerLink="/login" routerLinkActive="active">
+				<span class="nav-text">LOGIN</span>
+			</a>
+			<a mat-list-item routerLink="/join" routerLinkActive="active">
+				<span class="nav-text">JOIN</span>
+			</a>
+		</ng-template>
+	</mat-nav-list>
+
+	<div class="theme-switcher">
+		<mat-slide-toggle (click)="toggleTheme()" checked></mat-slide-toggle>
+		<mat-icon>{{ isDarkTheme ? "bedtime" : "wb_sunny" }}</mat-icon>
+	</div>
 </mat-toolbar>
