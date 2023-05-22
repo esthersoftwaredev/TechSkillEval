@@ -1,5 +1,9 @@
 from app import app, db
-from controllers import get_fe_assessments, get_mean_assessments, get_mern_assessments, get_backend_assessments, get_fullstack_assessments, get_assessment
+from controllers import register_user, get_fe_assessments, get_mean_assessments, get_mern_assessments, get_backend_assessments, get_fullstack_assessments, get_assessment
+
+@app.route('/register', methods=['POST'])
+def register():
+    return register_user()
 
 @app.route('/')
 def index():
