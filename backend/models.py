@@ -1,5 +1,7 @@
 from app import db
-from flask_bcrypt import generate_password_hash, check_password_hash
+from flask_bcrypt import Bcrypt, generate_password_hash, check_password_hash
+
+bcrypt = Bcrypt()
 
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -10,10 +12,10 @@ class User(db.Model):
     is_admin = db.Column(db.Boolean, default=False)
 
     def set_password(self, password):
-        self.password_hash = generate_password_hash(password).decode('utf-8')
+        self.password_hash = bcrypt.generate_password_hash(password).decode('utf-8')
 
     def check_password(self, password):
-        return check_password_hash(self.password_hash, password)
+        return bcrypt.check_password_hash(self.password_hash, password)
     
     def serialize(self):
         return {

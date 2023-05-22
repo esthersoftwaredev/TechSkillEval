@@ -16,15 +16,15 @@ def populate_database():
         admin_user = User.query.filter_by(username='esteewhite').first()
         if admin_user is None:
             # Create admin user
-            admin_password = generate_password_hash('adminpass')
             admin_user = User(
                 fullName='Esther White',  # Set the fullName value here
                 username='esteewhite',
                 email='esteewhite@hotmail.com',
-                password_hash=admin_password,
                 is_admin=True
             )
+            admin_user.set_password('adminpass')
             db.session.add(admin_user)
+            db.session.commit()
 
         if category == "frontend":
             # Create frontend-assessments
