@@ -13,7 +13,7 @@ def populate_database():
         db.session.commit()
 
         # Check if admin user already exists
-        admin_user = User.query.filter_by(username='esteewhite').first()
+        admin_user = User.query.filter_by(email='esteewhite@hotmail.com').first()
         if admin_user is None:
             # Create admin user
             admin_user = User(
