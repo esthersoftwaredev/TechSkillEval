@@ -2,6 +2,7 @@ import { Component } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { UserService } from "src/app/services/user.service";
 import { MatSnackBar, MatSnackBarConfig } from "@angular/material/snack-bar";
+import { Router } from "@angular/router";
 
 @Component({
 	selector: "app-join",
@@ -14,7 +15,8 @@ export class JoinComponent {
 	constructor(
 		private formBuilder: FormBuilder,
 		private userService: UserService,
-		private snackBar: MatSnackBar
+		private snackBar: MatSnackBar,
+    private router: Router
 	) {
 		this.signUpForm = this.formBuilder.group(
 			{
@@ -71,7 +73,7 @@ export class JoinComponent {
 					console.log("Registration successful!", response);
 					config.panelClass = ["error-snackbar"];
 					this.snackBar.open("Registration successful!", "Close", config);
-					// Handle successful sign-up response here
+					this.router.navigate(['/profile']);
 				},
 				(error) => {
 					console.log("Registration failed!", error);

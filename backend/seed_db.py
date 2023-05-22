@@ -1,5 +1,6 @@
 from app import app, db
-from models import Assessment, Option
+from models import User, Assessment, Option
+from werkzeug.security import generate_password_hash
 
 def populate_database():
 
@@ -10,6 +11,26 @@ def populate_database():
         Assessment.query.filter_by(category=category).delete()
         Option.query.filter_by(category=category).delete()
         db.session.commit()
+
+         # Check if admin user already exists
+        admin_user = User.query.filter_by(username='esteewhite').first()
+        if admin_user is None:
+            # Create admin user
+            admin_password = generate_password_hash('adminpass')
+            admin_user = User(
+                fullName='Esther White',  # Set the fullName value here
+                username='esteewhite',
+                email='esteewhite@hotmail.com',
+                password_hash=admin_password,
+                is_admin=True
+            )
+            db.session.add(admin_user)
+            db.session.commit()
+            print('Admin user created.')
+
+    if __name__ == "__main__":
+        with app.app_context():
+            populate_database()
 
         if category == "frontend":
             # Create frontend-assessments
