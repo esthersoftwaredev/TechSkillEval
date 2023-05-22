@@ -1,6 +1,7 @@
 import { Component } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { UserService } from "src/app/services/user.service";
+import { Router } from "@angular/router";
 import { MatSnackBar, MatSnackBarConfig } from "@angular/material/snack-bar";
 
 @Component({
@@ -14,7 +15,8 @@ export class LoginComponent {
 	constructor(
 		private formBuilder: FormBuilder,
 		private userService: UserService,
-		private snackBar: MatSnackBar
+		private snackBar: MatSnackBar,
+    private router: Router
 	) {
 		this.loginForm = this.formBuilder.group({
 			email: ["", [Validators.required, Validators.email]],
@@ -49,7 +51,7 @@ export class LoginComponent {
           console.log('Login successful!', response);
           config.panelClass = ['error-snackbar'];
           this.snackBar.open('Login successful!', 'Close', config); // Display success snackbar
-          // Handle successful login response here (e.g., redirect to a new page)
+          this.router.navigate(['/profile']);
         },
         (error) => {
           console.log('Login failed!', error);

@@ -29,6 +29,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { ProfileComponent } from './components/profile/profile.component';
 
 @NgModule({
 	declarations: [
@@ -41,6 +42,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
   FqaComponent,
   LoginComponent,
   JoinComponent,
+  ProfileComponent,
 	],
 	imports: [
 		BrowserModule,

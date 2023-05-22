@@ -1,6 +1,7 @@
 from app import db
 from models import User, Assessment
 from flask import jsonify, request
+from flask_jwt_extended import create_access_token
 
 def register_user():
     data = request.get_json()
@@ -20,6 +21,21 @@ def register_user():
     db.session.commit()
 
     return jsonify(user.serialize()), 201
+
+def login_user():
+    data = request.get_json()
+    username = data.get('username')
+    password = data.get('password')
+
+    user = User.query.filter_by(username=username).first()
+
+    if user is None or not user.check_password(password):
+        return jsonify({'message': 'Invalid username or password'}), 401
+
+    access_token = create_access_token(identity=username)
+    response = jsonify({'login': True})
+    set_access_cookies(response, access_token)
+    return response, 200
 
 def get_fe_assessments():
     assessments = Assessment.query.filter_by(category='frontend').all()

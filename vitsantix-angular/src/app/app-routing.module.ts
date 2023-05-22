@@ -6,6 +6,7 @@ import { AssessmentsComponent } from './components/assessments/assessments.compo
 import { FqaComponent } from './components/fqa/fqa.component';
 import { LoginComponent } from './components/login/login.component';
 import { JoinComponent } from './components/join/join.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'about', component: AboutComponent },
   { path: 'fqa', component: FqaComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'profile', component: ProfileComponent },
   { path: 'join', component: JoinComponent },
   { path: '**', redirectTo: 'home', pathMatch: 'full'},
 ];
