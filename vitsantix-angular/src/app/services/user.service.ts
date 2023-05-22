@@ -33,4 +33,9 @@ export class UserService {
   login(credentials: any): Observable<any> {
     return this.http.post<any>(`${this.apiUrl}/login`, credentials);
   }
+
+  logout(): void {
+    // Clear the token
+    this.token = "";
+  }
 }

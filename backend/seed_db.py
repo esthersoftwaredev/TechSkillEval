@@ -12,19 +12,19 @@ def populate_database():
         Option.query.filter_by(category=category).delete()
         db.session.commit()
 
-    # Check if admin user already exists
-    admin_user = User.query.filter_by(username='esteewhite').first()
-    if admin_user is None:
-        # Create admin user
-        admin_password = generate_password_hash('adminpass')
-        admin_user = User(
-            fullName='Esther White',  # Set the fullName value here
-            username='esteewhite',
-            email='esteewhite@hotmail.com',
-            password_hash=admin_password,
-            is_admin=True
-        )
-        db.session.add(admin_user)
+        # Check if admin user already exists
+        admin_user = User.query.filter_by(username='esteewhite').first()
+        if admin_user is None:
+            # Create admin user
+            admin_password = generate_password_hash('adminpass')
+            admin_user = User(
+                fullName='Esther White',  # Set the fullName value here
+                username='esteewhite',
+                email='esteewhite@hotmail.com',
+                password_hash=admin_password,
+                is_admin=True
+            )
+            db.session.add(admin_user)
 
         if category == "frontend":
             # Create frontend-assessments
