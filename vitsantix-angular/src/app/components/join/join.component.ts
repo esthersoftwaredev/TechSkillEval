@@ -62,16 +62,16 @@ export class JoinComponent {
 			};
 
 			const config: MatSnackBarConfig = {
-				duration: 3000, // Set the duration (in milliseconds)
-				horizontalPosition: "right", // Set the horizontal position to center
-				verticalPosition: "top", // Set the vertical position to top
-				panelClass: ["success-snackbar"], // Apply the success-snackbar CSS class
+				duration: 3000,
+				horizontalPosition: "right",
+				verticalPosition: "top",
+				panelClass: ["success-snackbar"],
 			};
 
 			this.userService.register(formData).subscribe(
 				(response) => {
 					console.log("Registration successful!", response);
-					config.panelClass = ["error-snackbar"];
+					config.panelClass = ["success-snackbar"];
 					this.snackBar.open("Registration successful!", "Close", config);
 					this.router.navigate(['/profile']);
 				},

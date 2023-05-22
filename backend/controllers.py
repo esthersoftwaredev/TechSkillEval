@@ -6,7 +6,7 @@ from flask_jwt_extended import create_access_token, set_access_cookies, jwt_requ
 @jwt_required()
 def get_all_users():
     current_user = get_jwt_identity()
-    user = User.query.filter_by(username=current_user).first()
+    user = User.query.filter_by(email=current_user).first()
 
     # If the user is not an admin, return a 403 Forbidden status code
     if not user.is_admin:
@@ -22,10 +22,10 @@ def register_user():
     fullName = data.get('fullName')
     password = data.get('password')
 
-    user = User.query.filter_by(username=username).first()
+    user = User.query.filter_by(email=email).first()
 
     if user is not None:
-        return jsonify({'message': 'Username already exists.'}), 400
+        return jsonify({'message': 'Email already exists.'}), 400
 
     user = User(username=username, email=email, fullName=fullName)
     user.set_password(password)

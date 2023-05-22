@@ -39,8 +39,6 @@ export class LoginComponent {
         password: this.password?.value
       };
 
-      console.log(credentials)
-
       const config: MatSnackBarConfig = {
         duration: 3000,
         horizontalPosition: 'right',
@@ -51,16 +49,15 @@ export class LoginComponent {
       this.authService.login(credentials).subscribe(
         (response) => {
           console.log('Login successful!', response);
-          config.panelClass = ['error-snackbar'];
-          this.snackBar.open('Login successful!', 'Close', config); // Display success snackbar
+          config.panelClass = ['success-snackbar'];
+          this.snackBar.open('Login successful!', 'Close', config);
           this.authService.setToken(response.access_token);
           this.router.navigate(['/profile']);
         },
         (error) => {
           console.log('Login failed!', error);
-          config.panelClass = ['error-snackbar']; // Apply the error-snackbar CSS class
-          this.snackBar.open('Login failed!', 'Close', config); // Display error snackbar
-          // Handle login error here (e.g., display an error message)
+          config.panelClass = ['error-snackbar'];
+          this.snackBar.open('Login failed!', 'Close', config);
         }
       );
     } else {
