@@ -39,5 +39,5 @@ def backend_assessments():
     return get_backend_assessments()
 
 @app.route('/assessments/<assessment_id>', methods=['GET'])
-def get_assessment(assessment_id):
+def get_single_assessment(assessment_id):
     return get_assessment(assessment_id)
