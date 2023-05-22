@@ -1,7 +1,19 @@
 from app import db
 from models import User, Assessment
 from flask import jsonify, request
-from flask_jwt_extended import create_access_token
+from flask_jwt_extended import create_access_token, set_access_cookies, jwt_required, get_jwt_identity
+
+@jwt_required()
+def get_all_users():
+    current_user = get_jwt_identity()
+    user = User.query.filter_by(username=current_user).first()
+
+    # If the user is not an admin, return a 403 Forbidden status code
+    if not user.is_admin:
+        return jsonify({'msg': 'Access forbidden'}), 403
+
+    users = User.query.all()
+    return jsonify([user.serialize() for user in users]), 200
 
 def register_user():
     data = request.get_json()
@@ -23,15 +35,23 @@ def register_user():
     return jsonify(user.serialize()), 201
 
 def login_user():
-    data = request.get_json()
-    username = data.get('username')
-    password = data.get('password')
+    if not request.is_json:
+        return jsonify({"msg": "Missing JSON in request"}), 400
+
+    username = request.json.get('username', None)
+    password = request.json.get('password', None)
+
+    if not username:
+        return jsonify({"msg": "Missing username parameter"}), 400
+    if not password:
+        return jsonify({"msg": "Missing password parameter"}), 400
 
     user = User.query.filter_by(username=username).first()
 
     if user is None or not user.check_password(password):
-        return jsonify({'message': 'Invalid username or password'}), 401
+        return jsonify({"msg": "Bad username or password"}), 401
 
+    # Identity can be any data that is json serializable
     access_token = create_access_token(identity=username)
     response = jsonify({'login': True})
     set_access_cookies(response, access_token)

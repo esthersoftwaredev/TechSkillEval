@@ -51,6 +51,7 @@ export class LoginComponent {
           console.log('Login successful!', response);
           config.panelClass = ['error-snackbar'];
           this.snackBar.open('Login successful!', 'Close', config); // Display success snackbar
+          this.userService.setToken(response.access_token);
           this.router.navigate(['/profile']);
         },
         (error) => {
