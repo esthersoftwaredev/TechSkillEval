@@ -18,7 +18,6 @@ def login():
     return login_user()
 
 
-
 @app.route('/frontend-assessments', methods=['GET'])
 def frontend_assessments():
     return get_fe_assessments()
