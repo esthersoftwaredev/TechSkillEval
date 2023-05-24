@@ -8,28 +8,28 @@ import { Assessment } from '../models/assessment';
 })
 export class AssessmentService {
 
-  private apiUrl = 'https://python-flask-vitsantix.onrender.com/';  // Deployed Flask server URL
+  private apiUrl = 'https://python-flask-vitsantix.onrender.com/assessments/';  // Deployed Flask server URL
 
   constructor(private http: HttpClient) { }
 
   getFeAssessments(): Observable<Assessment[]> {
-    return this.http.get<Assessment[]>(`${this.apiUrl}/frontend-assessments`);
+    return this.http.get<Assessment[]>(`${this.apiUrl}/frontend`);
   }
 
   getMeanAssessments(): Observable<Assessment[]> {
-    return this.http.get<Assessment[]>(`${this.apiUrl}/mean-assessments`);
+    return this.http.get<Assessment[]>(`${this.apiUrl}/mean`);
   }
 
   getMernAssessments(): Observable<Assessment[]> {
-    return this.http.get<Assessment[]>(`${this.apiUrl}/mern-assessments`);
+    return this.http.get<Assessment[]>(`${this.apiUrl}/mern`);
   }
 
   getBackendAssessments(): Observable<Assessment[]> {
-    return this.http.get<Assessment[]>(`${this.apiUrl}/backend-assessments`);
+    return this.http.get<Assessment[]>(`${this.apiUrl}/backend`);
   }
 
   getFullStackAssessments(): Observable<Assessment[]> {
-    return this.http.get<Assessment[]>(`${this.apiUrl}/fullstack-assessments`);
+    return this.http.get<Assessment[]>(`${this.apiUrl}/fullstack`);
   }
 
   getAssessment(id: string): Observable<Assessment> {
