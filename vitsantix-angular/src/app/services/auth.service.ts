@@ -1,42 +1,45 @@
-import { Injectable } from "@angular/core";
-import { HttpClient, HttpHeaders } from "@angular/common/http";
-import { Observable, tap, throwError } from "rxjs";
-import { catchError } from 'rxjs/operators';
+import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { BehaviorSubject, Observable, throwError } from 'rxjs';
+import { catchError, tap } from 'rxjs/operators';
 
 @Injectable({
-	providedIn: "root",
+  providedIn: 'root'
 })
 export class AuthService {
-	private apiUrl = "https://python-flask-vitsantix.onrender.com/auth";
-	token: string = "";
+  private apiUrl = 'https://python-flask-vitsantix.onrender.com/auth';
+  token: string = "";
+  private isLoggedInSubject: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+  authState$: Observable<boolean> = this.isLoggedInSubject.asObservable();
 
-	constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {}
 
-	setToken(token: string): void {
-		localStorage.setItem("token", token);
-		this.token = token;
-	}
+  setToken(token: string): void {
+    localStorage.setItem("token", token);
+    this.token = token;
+    this.isLoggedInSubject.next(true);
+  }
 
-	getToken(): string {
-		if (!this.token) {
-			this.token = localStorage.getItem("token") || "";
-		}
-		return this.token;
-	}
+  getToken(): string {
+    if (!this.token) {
+      this.token = localStorage.getItem("token") || "";
+    }
+    return this.token;
+  }
 
-	httpOptions(): Object {
-		let headers = new HttpHeaders().set(
-			"Authorization",
-			"Bearer " + this.getToken()
-		);
-		return { headers: headers };
-	}
+  httpOptions(): HttpHeaders {
+    let headers = new HttpHeaders();
+    const token = this.getToken();
+    if (token) {
+      headers = headers.set("Authorization", "Bearer " + token);
+    }
+    return headers;
+  }
 
   login(credentials: any): Observable<any> {
     return this.http.post<any>(`${this.apiUrl}/login`, credentials).pipe(
       tap((response: { access_token: string }) => {
-        console.log(response);
-        this.setToken(response.access_token); // Set the token received from the server
+        this.setToken(response.access_token);
       }),
       catchError(error => {
         console.error('There was an error during the login request', error);
@@ -45,12 +48,13 @@ export class AuthService {
     );
   }
 
-	logout(): void {
-		localStorage.removeItem("token");
-		this.token = "";
-	}
+  logout(): void {
+    localStorage.removeItem("token");
+    this.token = "";
+    this.isLoggedInSubject.next(false);
+  }
 
-	isAuthenticated(): boolean {
-		return !!this.token; // Return true if the token exists, indicating that the user is authenticated
-	}
+  isAuthenticated(): boolean {
+    return !!this.token; // Return true if the token exists, indicating that the user is authenticated
+  }
 }

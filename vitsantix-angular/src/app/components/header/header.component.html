@@ -11,12 +11,22 @@
 			</a>
 		</ng-container>
 
-		<ng-container *ngIf="isLoggedIn; else loginJoinTemplate">
-			<!-- Display profile button -->
-			<a mat-list-item routerLink="/profile" routerLinkActive="active">
-				<span class="nav-text">Profile</span>
+		<ng-container *ngIf="!(isLoggedIn$ | async)">
+			<!-- Display login and join buttons for non-logged-in users -->
+			<a mat-list-item routerLink="/login" routerLinkActive="active">
+				<span class="nav-text">LOGIN</span>
+			</a>
+			<a mat-list-item routerLink="/join" routerLinkActive="active">
+				<span class="nav-text">JOIN</span>
 			</a>
 		</ng-container>
+		<ng-container *ngIf="isLoggedIn$ | async">
+			<!-- Display profile button for logged-in users -->
+			<a mat-list-item routerLink="/profile" routerLinkActive="active">
+				<span class="nav-text">PROFILE</span>
+			</a>
+		</ng-container>
+
 		<ng-template #loginJoinTemplate>
 			<!-- Display login and join buttons -->
 			<a mat-list-item routerLink="/login" routerLinkActive="active">
