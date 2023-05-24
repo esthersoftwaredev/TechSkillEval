@@ -30,19 +30,23 @@ def register():
 
 @auth.route('/login', methods=['POST'])
 def login():
-    email = request.json.get('email', None)
+    if not request.is_json:
+        return jsonify({"msg": "Missing JSON in request"}), 400
+
+    username = request.json.get('username', None)
     password = request.json.get('password', None)
+    if not username:
+        return jsonify({"msg": "Missing username parameter"}), 400
+    if not password:
+        return jsonify({"msg": "Missing password parameter"}), 400
 
-    if not email or not password:
-        return jsonify({"msg": "Missing email or password"}), 400
+    user = User.query.filter_by(username=username).first()
+    if user is None or not user.check_password(password):
+        return jsonify({"msg": "Bad username or password"}), 401
 
-    user = User.query.filter_by(email=email).first()
-
-    if not user or not check_password_hash(user.password_hash, password):
-        return jsonify({"msg": "Bad email or password"}), 401
-
-    access_token = create_access_token(identity=email)
-
-    return jsonify(access_token=access_token), 200
+    access_token = create_access_token(identity=username)
+    response = jsonify(access_token=access_token)
+    response.set_cookie('access_token_cookie', access_token, httponly=True)
+    return response, 200
 
 
