@@ -6,7 +6,7 @@ db = SQLAlchemy()
 
 def create_app():
     app = Flask(__name__)
-    CORS(app)
+    CORS(app, resources={r"/*": {"origins": "https://vitsantix.com"}})
     app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///my_database.db'  
     app.config['JWT_SECRET_KEY'] = '4ac33ad3a49fe6570319d31899dae6d1'  
     app.config['JWT_TOKEN_LOCATION'] = ['cookies']
