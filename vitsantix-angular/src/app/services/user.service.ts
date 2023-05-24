@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class UserService {
 
-  private apiUrl = 'https://python-flask-vitsantix.onrender.com';  // Deployed Flask server URL
+  private apiUrl = 'https://python-flask-vitsantix.onrender.com/auth';  // Deployed Flask server URL
 
   constructor(private http: HttpClient) { }
 
