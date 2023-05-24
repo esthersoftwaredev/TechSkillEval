@@ -1,5 +1,5 @@
-from app import app, db
-from models import User, Assessment, Option
+from app import create_app, db
+from app.models import User, Assessment, Option
 from werkzeug.security import generate_password_hash
 
 def populate_database():
@@ -136,5 +136,6 @@ def populate_database():
             db.session.commit()
 
 if __name__ == "__main__":
+    app = create_app()
     with app.app_context():
         populate_database()
