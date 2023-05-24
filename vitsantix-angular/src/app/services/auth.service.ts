@@ -7,7 +7,7 @@ import { catchError } from 'rxjs/operators';
 	providedIn: "root",
 })
 export class AuthService {
-	private apiUrl = "https://python-flask-vitsantix.onrender.com";
+	private apiUrl = "https://python-flask-vitsantix.onrender.com/auth";
 	token: string = "";
 
 	constructor(private http: HttpClient) {}
