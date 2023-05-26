@@ -1,6 +1,8 @@
 # VITSANTIX
 
-## ABOUT
+#### Video Demo:  <https://youtu.be/0Dpz0pZT4h4>
+
+## DESCRIPTION
 
 ### VITSANTIX is a project I am developing as an ultimate destination for video-based independent technical skills assessments. As the developer behind this platform, my aim is to provide developers and employers with a comprehensive, modern, and reliable assessment solution. 
 
@@ -61,5 +63,4 @@ The `vitsantix-angular` directory is where the frontend Angular application is. 
 
 The `package-lock.json` and `package.json` files are related to the project's npm package configuration.
 
-#### Video Demo:  <URL HERE>
-#### Description:
+#### by Esther White {{ MonaCodeLisa }}
