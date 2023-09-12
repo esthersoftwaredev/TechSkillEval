@@ -15,33 +15,59 @@ mat-toolbar {
 		}
 	}
 
-	mat-nav-list {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-		a {
-      width: auto;
-      height: 2.25rem;
-			margin: 0 1rem;
-			border: 0.11rem solid #ac74d0;
-      border-radius: 0.25rem;
+  &.show-menu {
+    padding-bottom: 65vh;
+    transition: all ease-in-out 0.3s;
 
-			&:hover {
-				background: linear-gradient(#76b8ef 10%, #ac74d0 70%, #f022ac 100%);
-				transform: scale(1.1);
-				transition: all ease-in-out 0.3s;
-			}
+    .menu {
+      mat-nav-list{
+        flex-direction: column;
+        position: absolute;
+        top: 16%;
+        left: 41%;
+        z-index: 5;
 
-			&.active {
-				background: linear-gradient(#76b8ef 10%, #ac74d0 70%, #f022ac 100%);
-				transform: scale(1.1);
-				transition: all ease-in-out 0.3s;
-			}
-
-      .nav-text {
-        font-size: 1rem;
-        font-family: "Ubuntu", sans-serif;
+        a {
+          margin: 0.5rem;
+        }
       }
+    }
+  }
+
+	.menu {
+		mat-nav-list {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			&.hide-menu {
+				display: none;
+			}
+
+			a {
+				width: auto;
+				height: 2.25rem;
+				margin: 0 1rem;
+				border: 0.11rem solid #ac74d0;
+				border-radius: 0.25rem;
+
+				&:hover {
+					background: linear-gradient(#76b8ef 10%, #ac74d0 70%, #f022ac 100%);
+					transform: scale(1.1);
+					transition: all ease-in-out 0.3s;
+				}
+
+				&.active {
+					background: linear-gradient(#76b8ef 10%, #ac74d0 70%, #f022ac 100%);
+					transform: scale(1.1);
+					transition: all ease-in-out 0.3s;
+				}
+
+				.nav-text {
+					font-size: 1rem;
+					font-family: "Ubuntu", sans-serif;
+				}
+			}
 		}
 	}
 

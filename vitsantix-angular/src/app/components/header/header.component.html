@@ -1,10 +1,18 @@
-<mat-toolbar>
+<mat-toolbar [ngClass]="{ 'show-menu': isMobileView && isMenuOpen }">
 	<div class="logo">
 		<a href="">
 			<img [src]="logoSrc" alt="" />
 		</a>
 	</div>
-	<mat-nav-list>
+
+  <div class="menu">
+  <!-- Add hamburger button -->
+  <button *ngIf="isMobileView" class="hamburger-button" (click)="toggleMenu()">
+    <mat-icon>{{ isMenuOpen ? 'close' : 'menu' }}</mat-icon>
+  </button>
+
+
+	<mat-nav-list [ngClass]="{ 'hide-menu': !isMenuOpen }">
 		<ng-container *ngFor="let item of navItems">
 			<a mat-list-item [routerLink]="item.link" routerLinkActive="active">
 				<span class="nav-text">{{ item.label }}</span>
@@ -37,6 +45,7 @@
 			</a>
 		</ng-template>
 	</mat-nav-list>
+</div>
 
 	<div class="theme-switcher">
 		<mat-slide-toggle (click)="toggleTheme()" checked></mat-slide-toggle>
