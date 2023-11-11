@@ -16,14 +16,14 @@ mat-toolbar {
 	}
 
   &.show-menu {
-    padding-bottom: 65vh;
+    padding-bottom: 50vh;
     transition: all ease-in-out 0.3s;
 
     .menu {
       mat-nav-list{
         flex-direction: column;
         position: absolute;
-        top: 16%;
+        top: 6rem;
         left: 41%;
         z-index: 5;
 
@@ -48,7 +48,7 @@ mat-toolbar {
 				width: auto;
 				height: 2.4rem;
 				margin: 0 1rem;
-        background-color: #bec0ce;
+        background-color: #AACBCF;
 				border-radius: 0.25rem;
 
 				&:hover {
@@ -64,7 +64,7 @@ mat-toolbar {
 				}
 
 				.nav-text {
-					font-size: 1.2rem;
+					font-size: 1.1rem;
 					font-family: "Ubuntu", sans-serif;
 				}
 			}

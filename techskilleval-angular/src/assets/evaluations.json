@@ -1,0 +1,345 @@
+{
+  "frontend": [
+    {
+      "icon": "html5",
+      "bgrColor": "#f38942",
+      "title": "HTML"
+    },
+    {
+      "icon": "css3",
+      "bgrColor": "#349edc",
+      "title": "CSS",
+      "hasOptions": true,
+      "options": [
+        {
+          "icon": "sass",
+          "bgrColor": "#cf649a",
+          "title": "SCSS"
+        }
+      ]
+    },
+    {
+      "icon": "bootstrap",
+      "bgrColor": "#513a75",
+      "title": "Bootstrap",
+      "hasOptions": true,
+      "options": [
+        {
+          "icon": "tailwindcss",
+          "bgrColor": "#19b3ba",
+          "title": "Tailwind CSS"
+        }
+      ]
+    },
+    {
+      "icon": "jquery",
+      "bgrColor": "#193556",
+      "title": "jQuery"
+    },
+    {
+      "icon": "javascript",
+      "bgrColor": "#f0c022",
+      "title": "JavaScript",
+      "hasOptions": true,
+      "options": [
+        {
+          "icon": "typescript",
+          "bgrColor": "#2f74c0",
+          "title": "TypeScript"
+        }
+      ]
+    },
+    {
+      "icon": "angular",
+      "bgrColor": "#de0031",
+      "title": "Angular",
+      "hasOptions": true,
+      "options": [
+        {
+          "icon": "react",
+          "bgrColor": "#4cbad8",
+          "title": "React"
+        },
+        {
+          "icon": "vue",
+          "bgrColor": "#41b883",
+          "title": "Vue"
+        },
+        {
+          "icon": "svelte",
+          "bgrColor": "#ff3e00",
+          "title": "Svelte"
+        }
+      ]
+    }
+  ],
+  "mean": [
+    {
+      "icon": "html5",
+      "bgrColor": "#f38942",
+      "title": "HTML"
+    },
+    {
+      "icon": "css3",
+      "bgrColor": "#349edc",
+      "title": "CSS",
+      "hasOptions": true,
+      "options": [
+        {
+          "icon": "sass",
+          "bgrColor": "#cf649a",
+          "title": "SCSS"
+        }
+      ]
+    },
+    {
+      "icon": "angular",
+      "bgrColor": "#de0031",
+      "title": "Angular"
+    },
+    {
+      "icon": "node",
+      "bgrColor": "#3b7f3a",
+      "title": "NodeJS"
+    },
+    {
+      "icon": "mongodb",
+      "bgrColor": "#001e2b",
+      "title": "MongoDB"
+    }
+  ],
+  "mern": [
+    {
+      "icon": "html5",
+      "bgrColor": "#f38942",
+      "title": "HTML"
+    },
+    {
+      "icon": "css3",
+      "bgrColor": "#349edc",
+      "title": "CSS",
+      "hasOptions": true,
+      "options": [
+        {
+          "icon": "sass",
+          "bgrColor": "#cf649a",
+          "title": "SCSS"
+        }
+      ]
+    },
+    {
+      "icon": "react",
+      "bgrColor": "#4cbad8",
+      "title": "React"
+    },
+    {
+      "icon": "node",
+      "bgrColor": "#3b7f3a",
+      "title": "NodeJS"
+    },
+    {
+      "icon": "mongodb",
+      "bgrColor": "#001e2b",
+      "title": "MongoDB"
+    }
+  ],
+  "backend": [
+    {
+      "icon": "node",
+      "bgrColor": "#3b7f3a",
+      "title": "NodeJS",
+      "hasOptions": true,
+      "options": [
+        {
+          "icon": "python",
+          "bgrColor": "#356895",
+          "title": "Python"
+        },
+        {
+          "icon": "java",
+          "bgrColor": "#131f3f",
+          "title": "Java"
+        },
+        {
+          "icon": "go",
+          "bgrColor": "#67d7e1",
+          "title": "Go"
+        },
+        {
+          "icon": "csharp",
+          "bgrColor": "#92458c",
+          "title": "C#"
+        }
+      ]
+    },
+    {
+      "icon": "php",
+      "bgrColor": "#4b568c",
+      "title": "PHP",
+      "hasOptions": true,
+      "options": [
+        {
+          "icon": "ruby",
+          "bgrColor": "#eb5745",
+          "title": "Ruby"
+        },
+        {
+          "icon": "cplusplus",
+          "bgrColor": "#659bd3",
+          "title": "C++"
+        }
+      ]
+    },
+    {
+      "icon": "django",
+      "bgrColor": "#092e20",
+      "title": "Django",
+      "hasOptions": true,
+      "options": [
+        {
+          "icon": "dot-net",
+          "bgrColor": "#6d409d",
+          "title": ".NET"
+        }
+      ]
+    },
+    {
+      "icon": "mongodb",
+      "bgrColor": "#001e2b",
+      "title": "MongoDB"
+    }
+  ],
+  "fullstack": [
+    {
+      "icon": "html5",
+      "bgrColor": "#f38942",
+      "title": "HTML"
+    },
+    {
+      "icon": "css3",
+      "bgrColor": "#349edc",
+      "title": "CSS",
+      "hasOptions": true,
+      "options": [
+        {
+          "icon": "sass",
+          "bgrColor": "#cf649a",
+          "title": "SCSS"
+        }
+      ]
+    },
+    {
+      "icon": "bootstrap",
+      "bgrColor": "#513a75",
+      "title": "Bootstrap",
+      "hasOptions": true,
+      "options": [
+        {
+          "icon": "tailwindcss",
+          "bgrColor": "#19b3ba",
+          "title": "Tailwind CSS"
+        }
+      ]
+    },
+    {
+      "icon": "javascript",
+      "bgrColor": "#f0c022",
+      "title": "JavaScript",
+      "hasOptions": true,
+      "options": [
+        {
+          "icon": "typescript",
+          "bgrColor": "#2f74c0",
+          "title": "TypeScript"
+        }
+      ]
+    },
+    {
+      "icon": "angular",
+      "bgrColor": "#de0031",
+      "title": "Angular",
+      "hasOptions": true,
+      "options": [
+        {
+          "icon": "react",
+          "bgrColor": "#4cbad8",
+          "title": "React"
+        },
+        {
+          "icon": "vue",
+          "bgrColor": "#41b883",
+          "title": "Vue"
+        },
+        {
+          "icon": "svelte",
+          "bgrColor": "#ff3e00",
+          "title": "Svelte"
+        }
+      ]
+    },
+    {
+      "icon": "node",
+      "bgrColor": "#3b7f3a",
+      "title": "NodeJS",
+      "hasOptions": true,
+      "options": [
+        {
+          "icon": "python",
+          "bgrColor": "#356895",
+          "title": "Python"
+        },
+        {
+          "icon": "java",
+          "bgrColor": "#131f3f",
+          "title": "Java"
+        },
+        {
+          "icon": "go",
+          "bgrColor": "#67d7e1",
+          "title": "Go"
+        },
+        {
+          "icon": "csharp",
+          "bgrColor": "#92458c",
+          "title": "C#"
+        }
+      ]
+    },
+    {
+      "icon": "php",
+      "bgrColor": "#4b568c",
+      "title": "PHP",
+      "hasOptions": true,
+      "options": [
+        {
+          "icon": "ruby",
+          "bgrColor": "#eb5745",
+          "title": "Ruby"
+        },
+        {
+          "icon": "cplusplus",
+          "bgrColor": "#659bd3",
+          "title": "C++"
+        }
+      ]
+    },
+    {
+      "icon": "django",
+      "bgrColor": "#092e20",
+      "title": "Django",
+      "hasOptions": true,
+      "options": [
+        {
+          "icon": "dot-net",
+          "bgrColor": "#6d409d",
+          "title": ".NET"
+        }
+      ]
+    },
+    {
+      "icon": "mongodb",
+      "bgrColor": "#001e2b",
+      "title": "MongoDB"
+    }
+  ]
+}

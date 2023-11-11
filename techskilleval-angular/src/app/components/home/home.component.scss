@@ -52,7 +52,7 @@
 		}
 
 		h4 {
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       line-height: 1.5;
 			.ITSE {
 				font-weight: 500;
@@ -71,7 +71,7 @@
 		mat-card {
 			align-items: center;
 			text-align: center;
-			width: 43%;
+			width: 45%;
 			margin: 1rem;
 			padding: 2rem 4rem;
 
@@ -104,10 +104,10 @@
 			}
 
 			a {
-        font-size: 1.3rem;
+        font-size: 1.2rem;
 				margin: 1rem 0;
 				padding: 1.3rem 1.5rem;
-				background-color: #bec0ce;
+				background-color: #AACBCF;
 
 				&:hover {
 					background: linear-gradient(#f8a1cb, #84e0d1);
@@ -117,4 +117,32 @@
 			}
 		}
 	}
+}
+
+@media only screen and (max-width: 500px) {
+  .home-content {
+    width: 80vw;
+    padding: 1rem;
+
+    .heading {
+      width: 100%;
+
+      h3 {
+        padding: 1rem 2rem 0rem;
+      }
+
+      h2 {
+        line-height: 2.5rem;
+      }
+    }
+
+    .cards-wrapper {
+
+      mat-card {
+        width: 100%;
+        margin: 1rem 0;
+        padding: 1rem;
+      }
+    }
+  }
 }

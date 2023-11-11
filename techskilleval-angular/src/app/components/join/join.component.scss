@@ -48,13 +48,25 @@
         width: auto;
         height: 2.7rem;
         margin-top: 0.5rem;
-        background-color: #bec0ce;
+        background-color: #AACBCF;
         border-radius: 0.25rem;
 
         &:hover {
           background: linear-gradient(#f8a1cb, #84e0d1);
         }
       }
+    }
+  }
+}
+
+@media only screen and (max-width: 500px) { 
+  .join {
+    .heading {
+      width: 80vw;
+    }
+
+    mat-card {
+      width: 70vw;
     }
   }
 }

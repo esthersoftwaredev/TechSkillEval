@@ -1,4 +1,4 @@
-export interface Assessment {
+export interface Evaluation {
   icon: string;
   bgrColor: string;
   title: string;
