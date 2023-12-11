@@ -1,6 +1,6 @@
 <div class="join">
 	<div class="heading">
-		<h2>SIGN UP</h2>
+		<h2>SEND A SIGN UP REQUEST</h2>
 	</div>
 	<mat-card>
 		<form [formGroup]="signUpForm" (ngSubmit)="onSignUpSubmit()">
@@ -46,7 +46,7 @@
 				</mat-error>
 			</mat-form-field>
 
-			<mat-form-field appearance="fill">
+			<!-- <mat-form-field appearance="fill">
 				<mat-label>Password</mat-label>
 				<input
 					matInput
@@ -61,17 +61,6 @@
 			</mat-form-field>
 
       <mat-form-field appearance="fill">
-				<mat-label>Position</mat-label>
-				<mat-select formControlName="position" required>
-          <mat-option value="developer">Developer</mat-option>
-          <mat-option value="employer">Employer</mat-option>
-        </mat-select>
-				<mat-error *ngIf="position?.invalid && position?.touched">
-					Please select position
-				</mat-error>
-			</mat-form-field>
-
-			<mat-form-field appearance="fill">
 				<mat-label>Confirm Password</mat-label>
 				<input
 					matInput
@@ -83,6 +72,17 @@
 				<mat-error *ngIf="confirmPassword?.invalid && confirmPassword?.touched">
 					Passwords must match
 				</mat-error>
+			</mat-form-field> -->
+
+      <mat-form-field appearance="fill">
+				<mat-label>Position</mat-label>
+				<mat-select formControlName="position" required>
+          <mat-option value="developer">Developer</mat-option>
+          <mat-option value="employer">Employer</mat-option>
+        </mat-select>
+				<mat-error *ngIf="position?.invalid && position?.touched">
+					Please select position
+				</mat-error>
 			</mat-form-field>
 
 			<button
@@ -91,7 +91,7 @@
 				type="submit"
 				[disabled]="signUpForm.invalid"
 			>
-				Sign Up
+				Request to join
 			</button>
 		</form>
 	</mat-card>

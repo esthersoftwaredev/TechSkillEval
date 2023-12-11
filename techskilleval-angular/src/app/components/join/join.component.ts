@@ -23,13 +23,13 @@ export class JoinComponent {
 				fullName: ["", Validators.required],
 				username: ["", Validators.required],
 				email: ["", [Validators.required, Validators.email]],
-				password: ["", [Validators.required, Validators.minLength(8)]],
-				confirmPassword: ["", Validators.required],
+				// password: ["", [Validators.required, Validators.minLength(8)]],
+				// confirmPassword: ["", Validators.required],
 				position: [null, Validators.required],
 			},
-			{
-				validator: this.mustMatch("password", "confirmPassword"),
-			}
+			// {
+			// 	validator: this.mustMatch("password", "confirmPassword"),
+			// }
 		);
 	}
 
@@ -45,13 +45,13 @@ export class JoinComponent {
 		return this.signUpForm.get("email");
 	}
 
-	get password() {
-		return this.signUpForm.get("password");
-	}
+	// get password() {
+	// 	return this.signUpForm.get("password");
+	// }
 
-	get confirmPassword() {
-		return this.signUpForm.get("confirmPassword");
-	}
+	// get confirmPassword() {
+	// 	return this.signUpForm.get("confirmPassword");
+	// }
 
 	get position() {
 		return this.signUpForm.get("position");
@@ -63,7 +63,7 @@ export class JoinComponent {
 				fullName: this.fullName?.value,
 				username: this.username?.value,
 				email: this.email?.value,
-				password: this.password?.value,
+				// password: this.password?.value,
 				position: this.position?.value,
 			};
 
