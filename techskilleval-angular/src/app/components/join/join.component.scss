@@ -6,7 +6,7 @@
   padding: 4rem 0;
 
   .heading {
-		width: 30vw;
+		width: 45vw;
 		position: relative;
     z-index: 5;
 
@@ -30,16 +30,17 @@
 	}
 
   mat-card {
-    width: 20vw;
+    width: 35vw;
 
     form {
       display: flex;
-      flex-direction: column;
-      padding: 2rem 3rem 3rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 2rem 2rem 3rem;
 
       mat-form-field {
-        margin: 0.5rem 0;
-        font-size: 1.2rem;
+        margin: 0.5rem 1rem;
+        font-size: 1rem;
       }
 
       button {
@@ -47,7 +48,7 @@
         text-transform: uppercase;
         width: auto;
         height: 2.7rem;
-        margin-top: 0.5rem;
+        margin-top: 1.5rem;
         background-color: #AACBCF;
         border-radius: 0.25rem;
 
@@ -59,7 +60,7 @@
   }
 }
 
-@media only screen and (max-width: 500px) { 
+@media only screen and (max-width: 500px) {
   .join {
     .heading {
       width: 80vw;

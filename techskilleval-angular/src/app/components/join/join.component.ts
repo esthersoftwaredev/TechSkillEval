@@ -25,6 +25,7 @@ export class JoinComponent {
 				email: ["", [Validators.required, Validators.email]],
 				password: ["", [Validators.required, Validators.minLength(8)]],
 				confirmPassword: ["", Validators.required],
+				position: [null, Validators.required],
 			},
 			{
 				validator: this.mustMatch("password", "confirmPassword"),
@@ -52,6 +53,10 @@ export class JoinComponent {
 		return this.signUpForm.get("confirmPassword");
 	}
 
+	get position() {
+		return this.signUpForm.get("position");
+	}
+
 	onSignUpSubmit() {
 		if (this.signUpForm.valid) {
 			const formData = {
@@ -59,6 +64,7 @@ export class JoinComponent {
 				username: this.username?.value,
 				email: this.email?.value,
 				password: this.password?.value,
+				position: this.position?.value,
 			};
 
 			const config: MatSnackBarConfig = {
@@ -84,6 +90,7 @@ export class JoinComponent {
 			);
 		} else {
 			console.log("Invalid Form");
+			console.log(this.position?.value);
 		}
 	}
 

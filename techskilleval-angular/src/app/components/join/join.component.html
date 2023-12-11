@@ -60,6 +60,17 @@
 				</mat-error>
 			</mat-form-field>
 
+      <mat-form-field appearance="fill">
+				<mat-label>Position</mat-label>
+				<mat-select formControlName="position" required>
+          <mat-option value="developer">Developer</mat-option>
+          <mat-option value="employer">Employer</mat-option>
+        </mat-select>
+				<mat-error *ngIf="position?.invalid && position?.touched">
+					Please select position
+				</mat-error>
+			</mat-form-field>
+
 			<mat-form-field appearance="fill">
 				<mat-label>Confirm Password</mat-label>
 				<input
@@ -73,6 +84,8 @@
 					Passwords must match
 				</mat-error>
 			</mat-form-field>
+
+
 
 			<button
 				mat-raised-button
