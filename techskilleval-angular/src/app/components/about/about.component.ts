@@ -11,7 +11,7 @@ export class AboutComponent {
     {
       title: 'OUR NAME',
       content:
-        "The name TechSkillEval' captures the essence of our platform, blending 'TechSkill' to highlight our emphasis on technical prowess and 'Eval' as a concise nod to Evaluation. This combination underscores our commitment to delivering a thorough and unbiased analysis of technical abilities. TechSkillEval provides a reliable platform for developers and employers seeking genuine insights into technical proficiency through our comprehensive evaluation approach.",
+        "The name 'TechSkillEval' captures the essence of our platform, blending 'TechSkill' to highlight our emphasis on technical prowess and 'Eval' as a concise nod to Evaluation. This combination underscores our commitment to delivering a thorough and unbiased analysis of technical abilities. TechSkillEval provides a reliable platform for developers and employers seeking genuine insights into technical proficiency through our comprehensive evaluation approach.",
     },
     {
       title: 'WHAT WE DO',
