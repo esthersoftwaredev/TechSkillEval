@@ -63,4 +63,4 @@ The `TechSkillEval-angular` directory is where the frontend Angular application 
 
 The `package-lock.json` and `package.json` files are related to the project's npm package configuration.
 
-#### by Esther White {{ MonaCodeLisa }}
+#### by Esther White | EstherSoftwareDev
